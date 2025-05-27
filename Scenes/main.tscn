@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw4rb18qjspg0"]
+
+[ext_resource type="Texture2D" uid="uid://cintlrmjfsdta" path="res://Sprites/icon.svg" id="1_2tyx8"]
+[ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
+[ext_resource type="PackedScene" uid="uid://bn4xb64ckllpp" path="res://Prefabs/ball.tscn" id="2_7qxot"]
+[ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
+[ext_resource type="Script" path="res://Scripts/energy_manager.gd" id="2_qkr74"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n11v6"]
+size = Vector2(1082, 35)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8st66")
+
+[node name="clickManager" type="Node2D" parent="."]
+script = ExtResource("2_ckqlq")
+
+[node name="energyManager" type="Node2D" parent="."]
+script = ExtResource("2_qkr74")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -457.0
+offset_top = -294.0
+offset_right = -309.0
+offset_bottom = -191.0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 51
+text = "points"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Area2D" type="StaticBody2D" parent="Node"]
+position = Vector2(-5, 343.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
+position = Vector2(545, -508.5)
+rotation = 1.53905
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D"]
+position = Vector2(-7.5, 7.62939e-06)
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="Area2D3" type="StaticBody2D" parent="Node"]
+position = Vector2(-10, 687)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D3"]
+position = Vector2(-532, -539.5)
+rotation = -1.55334
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D3"]
+position = Vector2(-528, -625)
+rotation = 1.5663
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Area2D2" type="StaticBody2D" parent="Node"]
+position = Vector2(-5, 343.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D2"]
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D2"]
+position = Vector2(559, -533.5)
+rotation = -1.55334
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="Area2D4" type="StaticBody2D" parent="Node"]
+position = Vector2(-24, -366)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D4"]
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D4"]
+position = Vector2(559, -533.5)
+rotation = -1.55334
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="ball" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-178, 60)
+
+[node name="ball2" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-49, -9)
+
+[node name="ball3" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(134, 19)
+
+[node name="ball4" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(98, -174)

@@ -1,0 +1,191 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw4rb18qjspg0"]
+
+[ext_resource type="Texture2D" uid="uid://cintlrmjfsdta" path="res://Sprites/icon.svg" id="1_2tyx8"]
+[ext_resource type="Texture2D" uid="uid://dlmfjxjt8mof3" path="res://Sprites/Dreamshield.png" id="1_il8rl"]
+[ext_resource type="Script" path="res://Scripts/explosion.gd" id="2_xyclf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5gyny"]
+radius = 25.1794
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xspcq"]
+radius = 58.1378
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n11v6"]
+size = Vector2(1082, 35)
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="."]
+position = Vector2(-64, -99)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D3"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_il8rl")
+
+[node name="explosion" type="Node2D" parent="RigidBody2D3"]
+script = ExtResource("2_xyclf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3/Area2D"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="explosionRango" type="Area2D" parent="RigidBody2D3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3/explosionRango"]
+shape = SubResource("CircleShape2D_xspcq")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Area2D" type="StaticBody2D" parent="Node"]
+position = Vector2(-5, 343.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D"]
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D"]
+position = Vector2(-7.5, 7.62939e-06)
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="Area2D3" type="StaticBody2D" parent="Node"]
+position = Vector2(-10, 687)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D3"]
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D3"]
+position = Vector2(-532, -539.5)
+rotation = -1.55334
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="Area2D2" type="StaticBody2D" parent="Node"]
+position = Vector2(-5, 343.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D2"]
+shape = SubResource("RectangleShape2D_n11v6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node/Area2D2"]
+position = Vector2(559, -533.5)
+rotation = -1.55334
+scale = Vector2(8.64844, 0.273437)
+texture = ExtResource("1_2tyx8")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="."]
+position = Vector2(27, -150)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D4"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_il8rl")
+
+[node name="explosion" type="Node2D" parent="RigidBody2D4"]
+script = ExtResource("2_xyclf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4/Area2D"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="explosionRango" type="Area2D" parent="RigidBody2D4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4/explosionRango"]
+shape = SubResource("CircleShape2D_xspcq")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="."]
+position = Vector2(107, -73)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D5"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_il8rl")
+
+[node name="explosion" type="Node2D" parent="RigidBody2D5"]
+script = ExtResource("2_xyclf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5/Area2D"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="explosionRango" type="Area2D" parent="RigidBody2D5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D5/explosionRango"]
+shape = SubResource("CircleShape2D_xspcq")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="."]
+position = Vector2(-115, -237)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D6"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_il8rl")
+
+[node name="explosion" type="Node2D" parent="RigidBody2D6"]
+script = ExtResource("2_xyclf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6/Area2D"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="explosionRango" type="Area2D" parent="RigidBody2D6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D6/explosionRango"]
+shape = SubResource("CircleShape2D_xspcq")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[node name="RigidBody2D7" type="RigidBody2D" parent="."]
+position = Vector2(180, -222)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D7"]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_il8rl")
+
+[node name="explosion" type="Node2D" parent="RigidBody2D7"]
+script = ExtResource("2_xyclf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7/Area2D"]
+shape = SubResource("CircleShape2D_5gyny")
+
+[node name="explosionRango" type="Area2D" parent="RigidBody2D7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D7/explosionRango"]
+shape = SubResource("CircleShape2D_xspcq")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[connection signal="input_event" from="RigidBody2D3/Area2D" to="RigidBody2D3/explosion" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D3/Area2D" to="RigidBody2D3/explosion" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D3/Area2D" to="RigidBody2D3/explosion" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="RigidBody2D4/Area2D" to="RigidBody2D4/explosion" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D4/Area2D" to="RigidBody2D4/explosion" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D4/Area2D" to="RigidBody2D4/explosion" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="RigidBody2D5/Area2D" to="RigidBody2D5/explosion" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D5/Area2D" to="RigidBody2D5/explosion" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D5/Area2D" to="RigidBody2D5/explosion" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="RigidBody2D6/Area2D" to="RigidBody2D6/explosion" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D6/Area2D" to="RigidBody2D6/explosion" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D6/Area2D" to="RigidBody2D6/explosion" method="_on_area_2d_mouse_exited"]
+[connection signal="input_event" from="RigidBody2D7/Area2D" to="RigidBody2D7/explosion" method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D7/Area2D" to="RigidBody2D7/explosion" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D7/Area2D" to="RigidBody2D7/explosion" method="_on_area_2d_mouse_exited"]

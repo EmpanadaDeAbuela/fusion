@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://bn4xb64ckllpp"]
+
+[ext_resource type="Script" path="res://Scripts/ball.gd" id="1_64ubr"]
+[ext_resource type="Texture2D" uid="uid://dlmfjxjt8mof3" path="res://Sprites/Dreamshield.png" id="1_ntlp6"]
+[ext_resource type="Script" path="res://Scripts/fision.gd" id="2_as3so"]
+[ext_resource type="Script" path="res://Scripts/sprite.gd" id="2_rou5t"]
+[ext_resource type="Script" path="res://Scripts/fusion.gd" id="3_4ef77"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w7uv5"]
+radius = 25.1794
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifred"]
+radius = 98.0204
+
+[node name="ball" type="RigidBody2D"]
+script = ExtResource("1_64ubr")
+metadata/type = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_ntlp6")
+
+[node name="sprite" type="Node2D" parent="."]
+script = ExtResource("2_rou5t")
+
+[node name="fision" type="Node2D" parent="."]
+script = ExtResource("2_as3so")
+
+[node name="fusion" type="Node2D" parent="."]
+script = ExtResource("3_4ef77")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_w7uv5")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_w7uv5")
+
+[node name="explosionRango" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="explosionRango"]
+shape = SubResource("CircleShape2D_ifred")
+debug_color = Color(0.711187, 0.261943, 1, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="fusion" method="_on_area_2d_body_entered"]
+[connection signal="mouse_entered" from="Area2D" to="fision" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="fision" method="_on_area_2d_mouse_exited"]
