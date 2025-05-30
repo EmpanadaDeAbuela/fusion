@@ -1,12 +1,10 @@
 extends RigidBody2D
 
-#@onready var clickManager = $"../clickManager"
+var id : int
 
-signal fusion(meta:int);
+func _ready() -> void:
+	pass
+	
 
-func emitirSeñal():
-	emit_signal("fusion", get_meta("type") )
-
-#func getClicks():
-#	print(clickManager)
-#	return clickManager.getClicks()
+func generarID():
+	id = randf_range(0, 999999999)

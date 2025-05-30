@@ -1,15 +1,16 @@
 extends Node2D
 
 var bola = preload("res://Prefabs/ball.tscn")
-
+ 
+var pelotas = []
 
 func fusionar(valor: int):
 	var bolaInstancia = bola.instantiate()
 	get_parent().call_deferred("add_child", bolaInstancia)
 	bolaInstancia.global_position = global_position
 
-#func _ready():
-#	await esperar_fusion()
+func _ready():
+	SignalManager.connect("fusionar", fusionar)
 
 
 
