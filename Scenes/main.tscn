@@ -1,19 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=7 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Texture2D" uid="uid://cintlrmjfsdta" path="res://Sprites/icon.svg" id="1_2tyx8"]
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="PackedScene" uid="uid://bn4xb64ckllpp" path="res://Prefabs/ball.tscn" id="2_7qxot"]
 [ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
 [ext_resource type="Script" path="res://Scripts/energy_manager.gd" id="2_qkr74"]
-[ext_resource type="Texture2D" uid="uid://da4vljf4k882j" path="res://Sprites/red-button-isolate-backbround-3d-render-png.webp" id="6_v2o1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n11v6"]
 size = Vector2(1082, 35)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8st66")
-
-[node name="fusionManager" type="Node2D" parent="."]
 
 [node name="clickManager" type="Node2D" parent="."]
 script = ExtResource("2_ckqlq")
@@ -103,24 +100,11 @@ position = Vector2(-178, 60)
 position = Vector2(-49, -9)
 
 [node name="ball3" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(134, 19)
+position = Vector2(44, -3)
 
 [node name="ball4" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(98, -174)
-
-[node name="ball5" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(-273, -18)
-
-[node name="ball6" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(-144, -87)
-
-[node name="ball7" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(39, -59)
-
-[node name="ball8" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(3, -252)
+position = Vector2(-203, -158)
 
 [node name="Red-button-isolate-backbround-3d-render-png" type="Sprite2D" parent="."]
 position = Vector2(406, 32)
 scale = Vector2(0.38, 0.38)
-texture = ExtResource("6_v2o1m")

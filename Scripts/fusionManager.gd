@@ -4,17 +4,26 @@ var bola = preload("res://Prefabs/ball.tscn")
  
 var pelotas = []
 
-func fusionar(valor: int):
-	var bolaInstancia = bola.instantiate()
-	get_parent().call_deferred("add_child", bolaInstancia)
-	bolaInstancia.global_position = global_position
-
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
 
+func fusionar(token: int, newPosition:Vector2):
+	
+	if token in pelotas:
+		pelotas = []
+		#print("el id está en pelotas")
+		instanciarPelotaHija(newPosition)
+		
+	else:
+		#print("el id está vestido")
+		pelotas.append(token)
 
-
-
-#func esperar_fusion() -> void:
-#	var valor = await fusion
-#	fusionar(valor)
+func instanciarPelotaHija(newPosition:Vector2):
+	
+	var bolaInstancia = bola.instantiate()
+	bolaInstancia.get_node("fision").clickManager = $clickManager
+	bolaInstancia.global_position = newPosition
+	get_parent().call_deferred("add_child", bolaInstancia)
+	
+	#print("asterisco se instancia")
+	#bolaInstancia.global_position = global_position
