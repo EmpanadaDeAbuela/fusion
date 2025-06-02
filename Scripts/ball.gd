@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 var id : int
+@onready var fision = $fision
 
 func _ready() -> void:
 	generarID()
@@ -12,3 +13,6 @@ func generarID():
 
 func getId():
 	return id
+
+func omnidirectionalForce():
+	fision.call_deferred("omnidirectionalForce")

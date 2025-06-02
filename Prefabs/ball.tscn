@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bn4xb64ckllpp"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_64ubr"]
-[ext_resource type="Texture2D" uid="uid://dlmfjxjt8mof3" path="res://Sprites/Dreamshield.png" id="1_ntlp6"]
 [ext_resource type="Script" path="res://Scripts/fision.gd" id="2_as3so"]
+[ext_resource type="Texture2D" uid="uid://cau3hm6qwyqed" path="res://Sprites/tomo.png" id="2_msw24"]
 [ext_resource type="Script" path="res://Scripts/sprite.gd" id="2_rou5t"]
 [ext_resource type="Script" path="res://Scripts/fusion.gd" id="3_4ef77"]
 
@@ -17,8 +17,8 @@ script = ExtResource("1_64ubr")
 metadata/type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("1_ntlp6")
+scale = Vector2(0.0462963, 0.0462963)
+texture = ExtResource("2_msw24")
 
 [node name="sprite" type="Node2D" parent="."]
 script = ExtResource("2_rou5t")
@@ -33,7 +33,6 @@ script = ExtResource("3_4ef77")
 shape = SubResource("CircleShape2D_w7uv5")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_w7uv5")

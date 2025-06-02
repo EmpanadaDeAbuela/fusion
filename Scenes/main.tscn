@@ -94,16 +94,55 @@ scale = Vector2(8.64844, 0.273437)
 texture = ExtResource("1_2tyx8")
 
 [node name="ball" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(-178, 60)
+position = Vector2(40, 104)
 
 [node name="ball2" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(-49, -9)
+position = Vector2(178, 13)
 
 [node name="ball3" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(44, -3)
+position = Vector2(163, -168)
 
 [node name="ball4" parent="." instance=ExtResource("2_7qxot")]
-position = Vector2(-203, -158)
+position = Vector2(-1, -216)
+
+[node name="ball5" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-254, 110)
+
+[node name="ball6" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(44, 236)
+
+[node name="ball7" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(184, 225)
+
+[node name="ball8" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(29, -49)
+
+[node name="ball9" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-127, 12)
+
+[node name="ball10" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-142, -169)
+
+[node name="ball11" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-306, -217)
+
+[node name="ball12" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-398, 175)
+
+[node name="ball16" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-413, 31)
+
+[node name="ball17" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-430, -116)
+
+[node name="ball13" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-261, 235)
+
+[node name="ball14" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-121, 224)
+
+[node name="ball15" parent="." instance=ExtResource("2_7qxot")]
+position = Vector2(-276, -50)
 
 [node name="Red-button-isolate-backbround-3d-render-png" type="Sprite2D" parent="."]
 position = Vector2(406, 32)

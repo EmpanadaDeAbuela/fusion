@@ -8,6 +8,7 @@ func _ready():
 	
 	if clickManager == null:
 		clickManager = get_node_or_null("../../clickManager")
+		
 
 func _physics_process(delta: float) -> void:
 	#print(clicks)
@@ -29,15 +30,16 @@ func _on_area_2d_mouse_exited() -> void:
 #	print(clicks)
 	
 
-func explode():
-	
+func omnidirectionalForce(divisor:int):
 	for body in rango.get_overlapping_bodies():
 		#print("Cuerpos dentro del rango: ", rango.get_overlapping_bodies().size())
 
 		if body is RigidBody2D:
 			body.sleeping = false  # Despertalo por si acaso
 			var dir = (body.global_position - rango.global_position).normalized()
-			var fuerza = 1500
+			var fuerza = 1500/divisor
 			body.apply_impulse(dir * fuerza, Vector2.ZERO)
-		
+
+func explode():
+	omnidirectionalForce(1)
 	get_parent().queue_free()
