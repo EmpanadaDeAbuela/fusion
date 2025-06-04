@@ -16,3 +16,7 @@ func getId():
 
 func omnidirectionalForce():
 	fision.call_deferred("omnidirectionalForce")
+
+func initBola():
+	$sprite.setComponents()
+	$sprite.setSprite(1)

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var label = $"../Label"
 
-var clicks = 99
+var clicks = 3
 
 func _ready() -> void:
 	#SignalManager.connect("clickOnBall", restClicks)

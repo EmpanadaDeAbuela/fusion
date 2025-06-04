@@ -14,7 +14,7 @@ extends Node2D
 #var sprite5 = preload("res://Sprites/Dreamshield.png")
 
 func _ready() -> void:
-	setSprite(0)
+	call_deferred("setSprite", 0)
 
 func agrandar(cant:int):
 	sprite.scale = sprite.scale*cant/2
@@ -62,4 +62,8 @@ func setSprite(opcion:int):
 			#sprite.texture = sprite5
 			agrandar(type+1)
 		
-			
+func setComponents():
+	sprite = $"../Sprite2D"
+	collision = $"../collision"
+	explosionRange = $"../explosionRango"
+	area = $"../Area2D"
