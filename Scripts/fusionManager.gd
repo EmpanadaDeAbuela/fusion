@@ -24,7 +24,7 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	bolaInstancia.get_node("fision").clickManager = $clickManager
 	bolaInstancia.global_position = newPosition
 	
-	bolaInstancia.initBola()
+	bolaInstancia.initBola(1)
 	#bolaInstancia.get_node("sprite").setComponents()
 	#bolaInstancia.get_node("sprite").setSprite(1)
 	

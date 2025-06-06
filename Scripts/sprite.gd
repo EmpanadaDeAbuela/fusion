@@ -4,6 +4,7 @@ extends Node2D
 @onready var collision = $"../collision"
 @onready var explosionRange = $"../explosionRango"
 @onready var area = $"../Area2D"
+@onready var bola = $".."
 #@onready var bola = get_parent()
 
 #var sprite0 = preload("res://Sprites/Void_Heart.png")
@@ -13,14 +14,20 @@ extends Node2D
 #var sprite4 = preload("res://Sprites/Unbreakable_Heart.png")
 #var sprite5 = preload("res://Sprites/Dreamshield.png")
 
+static var sizes = []
+
 func _ready() -> void:
 	call_deferred("setSprite", 0)
 
-func agrandar(cant:int):
-	sprite.scale = sprite.scale*cant/2
-	collision.scale = collision.scale*cant/2
-	area.scale = area.scale*cant/2
-	explosionRange.scale = explosionRange.scale*cant/2
+func agrandar(cant:float):
+	
+	var vectorCant = Vector2(cant, cant)
+	
+	#bola.scale = vectorCant
+	sprite.scale = vectorCant/22
+	collision.scale = vectorCant
+	area.scale = vectorCant
+	explosionRange.scale = vectorCant
 
 func setSprite(opcion:int): 
 	
@@ -39,29 +46,23 @@ func setSprite(opcion:int):
 	match type:
 		0:
 			sprite.modulate = Color.RED
-			#sprite.texture = sprite0
-			agrandar(type+1)
+			agrandar(0.8)
 		1:
 			sprite.modulate = Color.DARK_ORANGE
-			#sprite.texture = sprite1
-			agrandar(type+1)
+			agrandar(1)
 		2:
 			sprite.modulate = Color.YELLOW
-			#sprite.texture = sprite2
-			agrandar(type+1)
+			agrandar(1.2)
 		3:
 			sprite.modulate = Color.GREEN
-			#sprite.texture = sprite3
-			agrandar(type+1)
+			agrandar(1.5)
 		4:
 			sprite.modulate = Color.BLUE
-			#sprite.texture = sprite4
-			agrandar(type+1)
+			agrandar(2)
 		5:
 			sprite.modulate = Color.PURPLE
-			#sprite.texture = sprite5
-			agrandar(type+1)
-		
+			agrandar(2.5)
+
 func setComponents():
 	sprite = $"../Sprite2D"
 	collision = $"../collision"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=8 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Texture2D" uid="uid://cintlrmjfsdta" path="res://Sprites/icon.svg" id="1_2tyx8"]
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
+[ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
 [ext_resource type="PackedScene" uid="uid://bn4xb64ckllpp" path="res://Prefabs/ball.tscn" id="2_7qxot"]
 [ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
 [ext_resource type="Script" path="res://Scripts/energy_manager.gd" id="2_qkr74"]
@@ -11,6 +12,10 @@ size = Vector2(1082, 35)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8st66")
+
+[node name="ballSpawner" type="Node2D" parent="."]
+position = Vector2(-93.55, -402)
+script = ExtResource("2_6spoq")
 
 [node name="clickManager" type="Node2D" parent="."]
 script = ExtResource("2_ckqlq")
@@ -66,6 +71,7 @@ texture = ExtResource("1_2tyx8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D3"]
 position = Vector2(-528, -625)
 rotation = 1.5663
+scale = Vector2(1.47964, 1)
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Area2D2" type="StaticBody2D" parent="Node"]
@@ -81,14 +87,14 @@ scale = Vector2(8.64844, 0.273437)
 texture = ExtResource("1_2tyx8")
 
 [node name="Area2D4" type="StaticBody2D" parent="Node"]
-position = Vector2(-24, -366)
+position = Vector2(-5, -447)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D4"]
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Area2D4"]
-position = Vector2(559, -533.5)
-rotation = -1.55334
+position = Vector2(272, -538.5)
+rotation = -1.57363
 scale = Vector2(8.64844, 0.273437)
 texture = ExtResource("1_2tyx8")
 
