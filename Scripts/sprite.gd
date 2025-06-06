@@ -4,20 +4,18 @@ extends Node2D
 @onready var collision = $"../collision"
 @onready var explosionRange = $"../explosionRango"
 @onready var area = $"../Area2D"
-@onready var bola = $".."
-#@onready var bola = get_parent()
+@onready var label = $"../Label"
 
-#var sprite0 = preload("res://Sprites/Void_Heart.png")
-#var sprite1 = preload("res://Sprites/Dream_Wielder.png")
-#var sprite2 = preload("res://Sprites/Fragile_Heart.png")
-#var sprite3 = preload("res://Sprites/Spore_Shroom.png")
-#var sprite4 = preload("res://Sprites/Unbreakable_Heart.png")
-#var sprite5 = preload("res://Sprites/Dreamshield.png")
-
-static var sizes = []
+var instanciadaDesdeEditor := false
+#static var sizes = []
 
 func _ready() -> void:
-	call_deferred("setSprite", 0)
+	call_deferred("setSprite", false)
+	#label.text = str(get_parent().get_meta("type"))
+	
+#func _process(delta: float) -> void:
+#	if Input.is_action_just_pressed("ui_accept"):
+#		setSprite(0)
 
 func agrandar(cant:float):
 	
@@ -29,19 +27,16 @@ func agrandar(cant:float):
 	area.scale = vectorCant
 	explosionRange.scale = vectorCant
 
-func setSprite(opcion:int): 
+func setRandomMeta():
+	var type = randi() % 6
+	get_parent().set_meta("type", type)
 	
-	#si es 0 es desde el ready (se genera type aleatorioamente)
-	#si es 1 es porque se fusionón (se le asigna dependdiedo los padres)
+func setSprite(setRandomONo:bool): 
 	
-	var type 
+	if setRandomONo or instanciadaDesdeEditor: 
+		setRandomMeta()
 	
-	if opcion == 0:
-		type = randi() % 6
-		get_parent().set_meta("type", type)
-		
-	elif opcion == 1:
-		type = get_parent().get_meta("type")
+	var type = get_parent().get_meta("type")
 	
 	match type:
 		0:

@@ -16,6 +16,6 @@ func instanciarBola():
 	var bolaInstancia = bola.instantiate()
 	#bolaInstancia.get_node("fision").clickManager = $clickManager
 	bolaInstancia.global_position = global_position
-	bolaInstancia.initBola(0)
+	bolaInstancia.initBola(true)
 	get_parent().call_deferred("add_child", bolaInstancia)
 	

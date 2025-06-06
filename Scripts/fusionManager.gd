@@ -24,14 +24,12 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	bolaInstancia.get_node("fision").clickManager = $clickManager
 	bolaInstancia.global_position = newPosition
 	
-	bolaInstancia.initBola(1)
-	#bolaInstancia.get_node("sprite").setComponents()
-	#bolaInstancia.get_node("sprite").setSprite(1)
+	bolaInstancia.initBola(false)
 	
 	if type < 5:
 		bolaInstancia.set_meta("type", type+1)
 	else:
-		bolaInstancia.set_meta("type", 1)
+		bolaInstancia.set_meta("type", 0)
 		
 	get_parent().call_deferred("add_child", bolaInstancia)
 	
