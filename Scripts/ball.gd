@@ -9,6 +9,9 @@ func _ready() -> void:
 	generarID()
 	#$Label.text = str(get_meta("type"))
 
+func _process(delta: float) -> void:
+	$Label.text = str(get_meta("type"))
+
 func generarID():
 	id = randf_range(0, 999999999) #por si acaso viste
 
