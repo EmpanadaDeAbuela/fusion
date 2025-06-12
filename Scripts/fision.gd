@@ -11,11 +11,8 @@ func _ready():
 		
 
 func _physics_process(delta: float) -> void:
-	#print(clicks)
 	
 	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks() > 0:
-		#SignalManager.emit_signal("clickOnBall")
-		
 		
 		clickManager.restarClicks(1)
 		explode()
@@ -26,22 +23,16 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	hover = false
 
-#func setClickAmount(clickAmount:int):
-#	print(clickAmount)
-#	clicks = clickAmount
-#	print(clicks)
-	
-
 func omnidirectionalForce(divisor:int):
+	
 	for body in rango.get_overlapping_bodies():
-		#print("Cuerpos dentro del rango: ", rango.get_overlapping_bodies().size())
-
 		if body is RigidBody2D:
-			body.sleeping = false  # Despertalo por si acaso
+			body.sleeping = false 
 			var dir = (body.global_position - rango.global_position).normalized()
 			var fuerza = 1000/divisor
 			body.apply_impulse(dir * fuerza, Vector2.ZERO)
 
 func explode():
 	omnidirectionalForce(1)
+	SignalManager.emit_signal("darAusente")
 	get_parent().queue_free()

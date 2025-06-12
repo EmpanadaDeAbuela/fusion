@@ -2,20 +2,20 @@ extends Node2D
 
 var bola = preload("res://Prefabs/ball.tscn")
  
+var nivelTerminado = false
+
 var pelotas = []
 
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
+	SignalManager.connect("nivelTerminado", desactivarEscena)
 
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
 	if token in pelotas:
-		#pelotas = []
-		#print("el id está en pelotas")
 		instanciarPelotaHija(newPosition, type)
 		sumarClicksDependiendoDeTipo(type)
 	else:
-		#print("el id está vestido")
 		pelotas.append(token)
 
 func instanciarPelotaHija(newPosition:Vector2, type:int):
@@ -32,9 +32,14 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 		bolaInstancia.set_meta("type", 0)
 		
 	get_parent().call_deferred("add_child", bolaInstancia)
-	
+
 func sumarClicksDependiendoDeTipo(type:int):
-	SignalManager.emit_signal("sumarClicks", type+1)
-			
-		
+	SignalManager.emit_signal("sumarClicks", 1)
 	
+func desactivarEscena():
+	
+	nivelTerminado = true
+	
+	for node in get_children():
+		if node is RigidBody2D:
+			node.queue_free()
