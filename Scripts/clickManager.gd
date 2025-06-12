@@ -2,12 +2,13 @@ extends Node2D
 
 @onready var label = $"../Label"
 
-var clicks = 99
+var clicks = 5
 
 func _ready() -> void:
+	SignalManager.connect("sumarClicks", sumarClicks)
 	#SignalManager.connect("clickOnBall", restClicks)
 	#emitClickAmount()
-	pass
+
 
 func _process(delta: float) -> void:
 	label.text = str(clicks)
@@ -15,12 +16,12 @@ func _process(delta: float) -> void:
 func getClicks():
 	return clicks
 	
-func setClicks(newclicks:int):
-	clicks = newclicks
+func sumarClicks(cant:int):
+	clicks += cant
 	#emitClickAmount()
 
-func restClicks():
-	clicks = clicks - 1
+func restarClicks(cant:int):
+	clicks -= cant
 	#emitClickAmount()
 
 func emitClickAmount():

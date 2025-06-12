@@ -19,7 +19,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			fusionar(generateToken(body.getId()), (global_position+body.global_position)/2, bola.get_meta("type"))
 			fision.omnidirectionalForce(2)
 			
-			bola.queue_free()
+			
+			########## bola.queue_free() ###############
+			
 			#energyManager.aumentarEnergy(fusionPoints)
 			#emit_signal("setEnergy", fusionPoints)
 

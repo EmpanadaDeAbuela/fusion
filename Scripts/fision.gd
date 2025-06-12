@@ -15,7 +15,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks() > 0:
 		#SignalManager.emit_signal("clickOnBall")
-		clickManager.restClicks()
+		
+		
+		clickManager.restarClicks(1)
 		explode()
 
 func _on_area_2d_mouse_entered() -> void:

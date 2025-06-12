@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func agrandar(cant:float):
 	
-	var vectorCant = Vector2(cant, cant)
+	var vectorCant = Vector2(1.5*cant, 1.5*cant)
 	
 	#bola.scale = vectorCant
 	sprite.scale = vectorCant/22
@@ -41,22 +41,22 @@ func setSprite(setRandomONo:bool):
 	match type:
 		0:
 			sprite.modulate = Color.RED
-			agrandar(0.8)
+			agrandar(2.5)
 		1:
 			sprite.modulate = Color.DARK_ORANGE
-			agrandar(1)
+			agrandar(2)
 		2:
 			sprite.modulate = Color.YELLOW
-			agrandar(1.2)
+			agrandar(1.5)
 		3:
 			sprite.modulate = Color.GREEN
-			agrandar(1.5)
+			agrandar(1.2)
 		4:
 			sprite.modulate = Color.BLUE
-			agrandar(2)
+			agrandar(1)
 		5:
 			sprite.modulate = Color.PURPLE
-			agrandar(2.5)
+			agrandar(0.8)
 
 func setComponents():
 	sprite = $"../Sprite2D"

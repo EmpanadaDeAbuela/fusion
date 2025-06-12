@@ -13,7 +13,7 @@ func fusionar(token: int, newPosition:Vector2, type:int):
 		#pelotas = []
 		#print("el id está en pelotas")
 		instanciarPelotaHija(newPosition, type)
-		
+		sumarClicksDependiendoDeTipo(type)
 	else:
 		#print("el id está vestido")
 		pelotas.append(token)
@@ -32,4 +32,9 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 		bolaInstancia.set_meta("type", 0)
 		
 	get_parent().call_deferred("add_child", bolaInstancia)
+	
+func sumarClicksDependiendoDeTipo(type:int):
+	SignalManager.emit_signal("sumarClicks", type+1)
+			
+		
 	
