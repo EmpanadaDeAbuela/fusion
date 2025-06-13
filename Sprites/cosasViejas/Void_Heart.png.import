@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bp1xrx5hog1d7"
-path="res://.godot/imported/Fragile_Heart.png-47541d69ddb2e18694c0513f45788f48.ctex"
+uid="uid://d2dprekdjxcoh"
+path="res://.godot/imported/Void_Heart.png-1a1dba49a398c481443021ae066e6d6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Fragile_Heart.png"
-dest_files=["res://.godot/imported/Fragile_Heart.png-47541d69ddb2e18694c0513f45788f48.ctex"]
+source_file="res://Sprites/cosasViejas/Void_Heart.png"
+dest_files=["res://.godot/imported/Void_Heart.png-1a1dba49a398c481443021ae066e6d6c.ctex"]
 
 [params]
 

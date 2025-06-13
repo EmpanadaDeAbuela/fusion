@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlmfjxjt8mof3"
-path="res://.godot/imported/Dreamshield.png-3380af6394f3b38441614636b2b07d3f.ctex"
+uid="uid://cud0fmnrli0bv"
+path="res://.godot/imported/verde.png-e94606b3272f7bcf123ee53ce17289cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dreamshield.png"
-dest_files=["res://.godot/imported/Dreamshield.png-3380af6394f3b38441614636b2b07d3f.ctex"]
+source_file="res://Sprites/bolas/verde.png"
+dest_files=["res://.godot/imported/verde.png-e94606b3272f7bcf123ee53ce17289cf.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdn82kbphisyo"
-path="res://.godot/imported/Spore_Shroom.png-01450a84aaa3c1236115c557e53867b6.ctex"
+path="res://.godot/imported/Spore_Shroom.png-75784902bdd54cb43605b3f494370124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Spore_Shroom.png"
-dest_files=["res://.godot/imported/Spore_Shroom.png-01450a84aaa3c1236115c557e53867b6.ctex"]
+source_file="res://Sprites/cosasViejas/Spore_Shroom.png"
+dest_files=["res://.godot/imported/Spore_Shroom.png-75784902bdd54cb43605b3f494370124.ctex"]
 
 [params]
 

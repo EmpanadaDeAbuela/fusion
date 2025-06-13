@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjp7tewood0ml"
-path="res://.godot/imported/Dream_Wielder.png-a25aed19be0b4a70c293c578687423dc.ctex"
+uid="uid://c16sdud45ctqw"
+path="res://.godot/imported/cian.png-98e4291e4925a3911529bc56df56516b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Dream_Wielder.png"
-dest_files=["res://.godot/imported/Dream_Wielder.png-a25aed19be0b4a70c293c578687423dc.ctex"]
+source_file="res://Sprites/bolas/cian.png"
+dest_files=["res://.godot/imported/cian.png-98e4291e4925a3911529bc56df56516b.ctex"]
 
 [params]
 

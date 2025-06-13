@@ -14,10 +14,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	label.text = str(clicks)
-	print(listaBolas)
+	#print(listaBolas)
 
 func emitirPuntos():
-	print("se pidieron los pnutos")
 	SignalManager.emit_signal("mandarPuntos", clicks)
 
 func getClicks():
@@ -36,7 +35,8 @@ func ponerPresente():
 	listaBolas.append(false)
 
 func ponerAusente():
-	listaBolas.erase(listaBolas.back())
+	pass
+	#listaBolas.erase(listaBolas.back())
 
 func seQuedoQuieto():
 	listaBolas.erase(listaBolas.back())

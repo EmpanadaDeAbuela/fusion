@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
 [ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
-[ext_resource type="Texture2D" uid="uid://d17wxgak05jb3" path="res://Sprites/fondoPlacegolder.png" id="2_h3emj"]
+[ext_resource type="Texture2D" uid="uid://r3yko8tns3lg" path="res://Sprites/background.png" id="2_v4tgf"]
 [ext_resource type="Texture2D" uid="uid://be0i0xlrwg0jy" path="res://Sprites/btn.png" id="6_xln5p"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="7_ixnxv"]
 [ext_resource type="Texture2D" uid="uid://dd0gjdbaihwof" path="res://Sprites/blackLayer.png" id="7_v2hfy"]
@@ -16,11 +16,10 @@ size = Vector2(1082, 35)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8st66")
 
-[node name="FondoPlacegolder" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.588235)
-position = Vector2(-9.00002, 22)
-scale = Vector2(2.15, 1.245)
-texture = ExtResource("2_h3emj")
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-2.99995, 27)
+scale = Vector2(0.882432, 0.756098)
+texture = ExtResource("2_v4tgf")
 
 [node name="ballSpawner" type="Node2D" parent="."]
 position = Vector2(-93.55, -402)
@@ -35,6 +34,7 @@ offset_top = -302.0
 offset_right = 464.0
 offset_bottom = -199.0
 size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 51
 text = "texto"
 
@@ -44,6 +44,7 @@ offset_top = 250.0
 offset_right = 481.0
 offset_bottom = 353.0
 size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 51
 text = "clicks"
 

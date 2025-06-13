@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2dprekdjxcoh"
-path="res://.godot/imported/Void_Heart.png-c4cd458e70ef44f17acc5d37288af308.ctex"
+uid="uid://dlmfjxjt8mof3"
+path="res://.godot/imported/Dreamshield.png-9d1755c2c3882f3c40b44a9a2c655aa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Void_Heart.png"
-dest_files=["res://.godot/imported/Void_Heart.png-c4cd458e70ef44f17acc5d37288af308.ctex"]
+source_file="res://Sprites/cosasViejas/Dreamshield.png"
+dest_files=["res://.godot/imported/Dreamshield.png-9d1755c2c3882f3c40b44a9a2c655aa8.ctex"]
 
 [params]
 
