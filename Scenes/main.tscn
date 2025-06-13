@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=12 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Texture2D" uid="uid://cintlrmjfsdta" path="res://Sprites/icon.svg" id="1_2tyx8"]
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
 [ext_resource type="PackedScene" uid="uid://bn4xb64ckllpp" path="res://Prefabs/ball.tscn" id="2_7qxot"]
 [ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
+[ext_resource type="Texture2D" uid="uid://d17wxgak05jb3" path="res://Sprites/fondoPlacegolder.png" id="2_h3emj"]
 [ext_resource type="Texture2D" uid="uid://be0i0xlrwg0jy" path="res://Sprites/btn.png" id="6_xln5p"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="7_ixnxv"]
 [ext_resource type="Texture2D" uid="uid://dd0gjdbaihwof" path="res://Sprites/blackLayer.png" id="7_v2hfy"]
@@ -15,6 +16,11 @@ size = Vector2(1082, 35)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8st66")
+
+[node name="FondoPlacegolder" type="Sprite2D" parent="."]
+position = Vector2(-9.00002, 22)
+scale = Vector2(2.15, 1.245)
+texture = ExtResource("2_h3emj")
 
 [node name="ballSpawner" type="Node2D" parent="."]
 position = Vector2(-93.55, -402)
