@@ -29,7 +29,7 @@ func omnidirectionalForce(divisor:int):
 		if body is RigidBody2D:
 			body.sleeping = false 
 			var dir = (body.global_position - rango.global_position).normalized()
-			var fuerza = 1000/divisor
+			var fuerza = 1000.0/divisor
 			body.apply_impulse(dir * fuerza, Vector2.ZERO)
 
 func explode():

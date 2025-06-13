@@ -10,10 +10,15 @@ func _ready() -> void:
 	SignalManager.connect("darPresente", ponerPresente)
 	SignalManager.connect("darAusente", ponerAusente)
 	SignalManager.connect("meQuedeQuieto", seQuedoQuieto)
+	SignalManager.connect("pedirPuntos", emitirPuntos)
 
 func _process(delta: float) -> void:
 	label.text = str(clicks)
-	#print(listaBolas)
+	print(listaBolas)
+
+func emitirPuntos():
+	print("se pidieron los pnutos")
+	SignalManager.emit_signal("mandarPuntos", clicks)
 
 func getClicks():
 	return clicks

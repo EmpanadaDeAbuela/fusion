@@ -9,3 +9,5 @@ signal darAusente()
 signal meQuedeQuieto()
 
 signal nivelTerminado()
+signal pedirPuntos()
+signal mandarPuntos(puntos:int)

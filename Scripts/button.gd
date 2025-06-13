@@ -13,3 +13,4 @@ func aparecerPantallaFinal():
 	tween2.tween_property($"../pantallaFinal", "position", Vector2(0, 0), 1.0)
 	
 	SignalManager.emit_signal("nivelTerminado")
+	SignalManager.emit_signal("pedirPuntos")

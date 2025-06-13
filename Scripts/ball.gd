@@ -7,6 +7,7 @@ var quieto = false
 
 func _ready() -> void:
 	SignalManager.emit_signal("darPresente")
+	SignalManager.connect("nivelTerminado", desactivarEscena)
 	$sprite.instanciadaDesdeEditor = instanciadaDesdeEditor
 	generarID()
 	#$Label.text = str(get_meta("type"))
@@ -31,3 +32,8 @@ func initBola(setRandomONo:bool):
 	#$sprite.setRandomMeta()
 	$sprite.setSprite(setRandomONo)
 	#$Label.text = str(get_meta("type"))
+	
+		
+func desactivarEscena():
+	
+	queue_free()

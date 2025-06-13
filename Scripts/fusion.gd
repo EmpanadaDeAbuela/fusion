@@ -3,7 +3,7 @@ extends Node2D
 @onready var bola = $".."
 @onready var fision = $"../fision"
 
-signal setEnergy(nrg:int);
+#signal setEnergy(nrg:int);
 
 var fusionPoints = 10
 

@@ -8,7 +8,7 @@ var pelotas = []
 
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
-	SignalManager.connect("nivelTerminado", desactivarEscena)
+
 
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
@@ -28,18 +28,11 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	
 	if type < 5:
 		bolaInstancia.set_meta("type", type+1)
+		get_parent().call_deferred("add_child", bolaInstancia) #para que no se loopee
 	else:
 		bolaInstancia.set_meta("type", 0)
 		
-	get_parent().call_deferred("add_child", bolaInstancia)
+	#get_parent().call_deferred("add_child", bolaInstancia)
 
 func sumarClicksDependiendoDeTipo(type:int):
-	SignalManager.emit_signal("sumarClicks", 1)
-	
-func desactivarEscena():
-	
-	nivelTerminado = true
-	
-	for node in get_children():
-		if node is RigidBody2D:
-			node.queue_free()
+	SignalManager.emit_signal("sumarClicks", 1)#type

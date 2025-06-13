@@ -5,3 +5,7 @@ NIVEL	+FUSION	-FISION	-SINCAMBIO
 3	+3	-3
 4	+4	-5
 5	+5	-8
+
+la idea es que clickear en una bola reste puntos, que dos bolas se fusionen sume puntos, 
+ambos dependiendo del nivel de las bolas. Después se me ocurrió que si clickeás pero no ocurre
+ninguna fusión que también te reste puntos.
