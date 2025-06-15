@@ -7,10 +7,13 @@ extends Node2D
 @onready var label = $"../Label"
 
 var rojo = preload("res://Sprites/bolas/rojo.png")
+var naranja = preload("res://Sprites/bolas/naranja.png")
+var amarillo = preload("res://Sprites/bolas/amarillo.png")
 var verde = preload("res://Sprites/bolas/verde.png")
 var cian = preload("res://Sprites/bolas/cian.png")
 var azul = preload("res://Sprites/bolas/azul.png")
 var violeta = preload("res://Sprites/bolas/violeta.png")
+var rosa = preload("res://Sprites/bolas/rosa.png")
 
 
 var instanciadaDesdeEditor := false
@@ -35,7 +38,7 @@ func agrandar(cant:float):
 	explosionRange.scale = vectorCant
 
 func setRandomMeta():
-	var type = randi() % 6
+	var type = randi() % 8
 	get_parent().set_meta("type", type)
 	
 func setSprite(setRandomONo:bool): 
@@ -51,25 +54,31 @@ func setSprite(setRandomONo:bool):
 			#sprite.modulate = Color.RED
 			agrandar(2.5)
 		1:
-			sprite.texture = rojo
-			sprite.modulate = Color.DARK_ORANGE
-			agrandar(2)
+			sprite.texture = naranja
+			#sprite.modulate = Color.DARK_ORANGE
+			agrandar(2.25)
 		2:
-			sprite.texture = verde
+			sprite.texture = amarillo
 			#sprite.modulate = Color.YELLOW
-			agrandar(1.5)
+			agrandar(2)
 		3:
-			sprite.texture = cian
+			sprite.texture = verde
 			#sprite.modulate = Color.GREEN
-			agrandar(1.2)
+			agrandar(1.75)
 		4:
-			sprite.texture = azul
+			sprite.texture = cian
 			#sprite.modulate = Color.BLUE
-			agrandar(1)
+			agrandar(1.5)
 		5:
-			sprite.texture = violeta
+			sprite.texture = azul
 			#sprite.modulate = Color.PURPLE
-			agrandar(0.8)
+			agrandar(1.25)
+		6:
+			sprite.texture = violeta
+			agrandar(1)
+		7:
+			sprite.texture = rosa
+			agrandar(0.75)
 
 func setComponents():
 	sprite = $"../Sprite2D"
