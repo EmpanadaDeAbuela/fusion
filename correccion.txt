@@ -1,0 +1,15 @@
+Hay que ver cómo hacer el setup de pelotas para que quede algo jugable en todas las tiradas.
+A veces están muy desacomodadas. Si guardaras guardar la posición de spawn de las pelotas podrías controlar
+que no spawneen en el mismo lugar que otras de otro nivel
+
+Subís la cantidad de pelotas un poco, hacés pruebas al azar y ves qué pasa.
+En el momento que pienses, uh este es un buen setup para armar una estrategia de juego
+ves qué características tiene (cantidad de pelotas de cada tipo, ubicación, cantidad de combinaciones, etc).
+
+Como verás esto es un montón de testeo, así que no lo hagas, pero para que sepas que es uno de los caminos.
+
+Sí arreglá el tema de "Jugar de nuevo" que eventualmente rompe.
+
+Imaginate que además de clicks tenés una cantidad de pelotas por soltar, y quizá te conviene, quizá no, ya que caen al azar.
+
+Quiero consecuencias visuales de la fusión!
