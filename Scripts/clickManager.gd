@@ -2,8 +2,9 @@ extends Node2D
 
 @onready var label = $"../Label"
 
-var clicks = 5
+var clicks = 3
 var listaBolas = []
+var sePuedeJugar = false
 
 func _ready() -> void:
 	SignalManager.connect("sumarClicks", sumarClicks)
@@ -11,6 +12,11 @@ func _ready() -> void:
 	SignalManager.connect("darAusente", ponerAusente)
 	SignalManager.connect("meQuedeQuieto", seQuedoQuieto)
 	SignalManager.connect("pedirPuntos", emitirPuntos)
+	SignalManager.connect("jugar", empezar)
+
+func empezar(sePuede:bool):
+	sePuedeJugar = sePuede
+
 
 func _process(delta: float) -> void:
 	label.text = str(clicks)
@@ -23,10 +29,12 @@ func getClicks():
 	return clicks
 	
 func sumarClicks(cant:int):
-	clicks += cant
+	if sePuedeJugar:
+		clicks += cant
 
 func restarClicks(cant:int):
-	clicks -= cant
+	if sePuedeJugar:
+		clicks -= cant
 
 func emitClickAmount():
 	SignalManager.emit_signal("clickAmount", clicks)

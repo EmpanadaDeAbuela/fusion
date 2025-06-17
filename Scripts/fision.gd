@@ -7,7 +7,7 @@ var clickManager: Node = null
 func _ready():
 	
 	if clickManager == null:
-		clickManager = get_node_or_null("../../clickManager")
+		clickManager = get_node_or_null("../../../clickManager")
 		
 
 func _physics_process(delta: float) -> void:

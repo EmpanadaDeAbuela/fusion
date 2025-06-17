@@ -32,7 +32,7 @@ func agrandar(cant:float):
 	var vectorCant = Vector2(1.5*cant, 1.5*cant)
 	
 	#bola.scale = vectorCant
-	sprite.scale = vectorCant/22
+	sprite.scale = vectorCant/24
 	collision.scale = vectorCant
 	area.scale = vectorCant
 	explosionRange.scale = vectorCant

@@ -9,12 +9,12 @@ var pelotas = []
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
 
-
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
 	if token in pelotas:
 		instanciarPelotaHija(newPosition, type)
 		sumarClicksDependiendoDeTipo(type)
+		SignalManager.emit_signal("instanciarBola")
 	else:
 		pelotas.append(token)
 
