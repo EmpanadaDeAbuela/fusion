@@ -18,6 +18,7 @@ config/icon="res://Sprites/icon.svg"
 [autoload]
 
 SignalManager="*res://Scripts/signalManager.gd"
+SoundEffectManager="*res://Scenes/SoundEffectManager.tscn"
 
 [display]
 

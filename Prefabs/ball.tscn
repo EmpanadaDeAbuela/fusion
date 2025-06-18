@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://bn4xb64ckllpp"]
+[gd_scene load_steps=10 format=3 uid="uid://bn4xb64ckllpp"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_64ubr"]
 [ext_resource type="Script" path="res://Scripts/fision.gd" id="2_as3so"]
 [ext_resource type="Texture2D" uid="uid://danmgu7mqjcrk" path="res://Sprites/bolas/rojo.png" id="2_f64rf"]
 [ext_resource type="Script" path="res://Scripts/sprite.gd" id="2_rou5t"]
 [ext_resource type="Script" path="res://Scripts/fusion.gd" id="3_4ef77"]
+[ext_resource type="AudioStream" uid="uid://bnes2socvyvrs" path="res://Audio/ping.wav" id="6_h2xh1"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wivf4"]
+friction = 0.29
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7uv5"]
 radius = 25.1794
@@ -13,7 +17,8 @@ radius = 25.1794
 radius = 98.0204
 
 [node name="ball" type="RigidBody2D"]
-continuous_cd = 1
+physics_material_override = SubResource("PhysicsMaterial_wivf4")
+continuous_cd = 2
 script = ExtResource("1_64ubr")
 metadata/type = 0
 
@@ -52,6 +57,10 @@ offset_right = 36.0
 offset_bottom = 10.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "a"
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_h2xh1")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="fusion" method="_on_area_2d_body_entered"]
 [connection signal="mouse_entered" from="Area2D" to="fision" method="_on_area_2d_mouse_entered"]

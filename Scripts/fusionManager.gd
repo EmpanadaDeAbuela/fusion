@@ -26,11 +26,12 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	
 	bolaInstancia.initBola(false)
 	
-	if type < 5:
+	if type < 7:
 		bolaInstancia.set_meta("type", type+1)
 		get_parent().call_deferred("add_child", bolaInstancia) #para que no se loopee
 	else:
 		bolaInstancia.set_meta("type", 0)
+	SoundEffectManager.emitirPop()
 		
 	#get_parent().call_deferred("add_child", bolaInstancia)
 

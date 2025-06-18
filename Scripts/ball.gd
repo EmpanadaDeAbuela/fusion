@@ -6,7 +6,7 @@ var id : int
 var quieto = false
 
 func _ready() -> void:
-	SignalManager.emit_signal("darPresente")
+	#SignalManager.emit_signal("darPresente")
 	SignalManager.connect("nivelTerminado", desactivarEscena)
 	$sprite.instanciadaDesdeEditor = instanciadaDesdeEditor
 	generarID()
@@ -15,8 +15,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Label.text = str(get_meta("type"))
 	
-	if linear_velocity == Vector2(0,0):
-		SignalManager.emit_signal("meQuedeQuieto")
+	#if linear_velocity == Vector2(0,0):
+		#SignalManager.emit_signal("meQuedeQuieto")
 
 func generarID():
 	id = randf_range(0, 999999999) #por si acaso viste
@@ -32,8 +32,6 @@ func initBola(setRandomONo:bool):
 	#$sprite.setRandomMeta()
 	$sprite.setSprite(setRandomONo)
 	#$Label.text = str(get_meta("type"))
-	
-		
+
 func desactivarEscena():
-	
 	queue_free()

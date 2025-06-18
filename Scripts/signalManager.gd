@@ -1,15 +1,12 @@
 extends Node
 
 signal fusionar(id:int, position:Vector2, type:int)
-#signal clickOnBall()
-#signal clickAmount(clicks:int)
 signal sumarClicks(cant:int)
-signal darPresente()
-signal darAusente()
-signal meQuedeQuieto()
+
+signal instanciarBola()
 
 signal nivelTerminado()
+signal jugar(sePuede:bool)
+
 signal pedirPuntos()
 signal mandarPuntos(puntos:int)
-signal jugar(sePuede:bool)
-signal instanciarBola()

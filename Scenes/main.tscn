@@ -24,25 +24,25 @@ texture = ExtResource("2_v4tgf")
 [node name="clickManager" type="Node2D" parent="."]
 script = ExtResource("2_ckqlq")
 
-[node name="Label2" type="Label" parent="."]
-offset_left = 310.0
-offset_top = -302.0
-offset_right = 464.0
-offset_bottom = -199.0
-size_flags_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 51
-text = "texto"
-
-[node name="Label" type="Label" parent="."]
-offset_left = 327.0
-offset_top = 250.0
-offset_right = 481.0
-offset_bottom = 353.0
+[node name="clicks" type="Label" parent="."]
+offset_left = 408.0
+offset_top = 34.0
+offset_right = 562.0
+offset_bottom = 137.0
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 51
 text = "clicks"
+
+[node name="puntos" type="Label" parent="."]
+offset_left = 410.0
+offset_top = -120.0
+offset_right = 564.0
+offset_bottom = -17.0
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "puntos"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 28)
@@ -63,12 +63,11 @@ scale = Vector2(8.64844, 0.273437)
 texture = ExtResource("1_2tyx8")
 
 [node name="Area2D2" type="StaticBody2D" parent="Node"]
-position = Vector2(-584, 63.265)
-rotation = 1.56486
+position = Vector2(-576, 63)
+rotation = 1.18989
 scale = Vector2(0.545, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D2"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Area2D2"]
@@ -77,12 +76,11 @@ scale = Vector2(8.64844, 0.273437)
 texture = ExtResource("1_2tyx8")
 
 [node name="Area2D3" type="StaticBody2D" parent="Node"]
-position = Vector2(240, 63.265)
-rotation = 1.56486
+position = Vector2(295, 65)
+rotation = 1.85235
 scale = Vector2(0.545, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D3"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Area2D3"]
@@ -96,7 +94,6 @@ rotation = 1.03505
 scale = Vector2(0.545, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D4"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Area2D4"]
@@ -110,7 +107,6 @@ rotation = 2.13375
 scale = Vector2(0.545, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Area2D5"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n11v6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/Area2D5"]
@@ -127,10 +123,10 @@ position = Vector2(406, 32)
 scale = Vector2(0.38, 0.38)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 236.0
-offset_top = -80.0
-offset_right = 856.0
-offset_bottom = 376.0
+offset_left = 237.0
+offset_top = 74.0
+offset_right = 857.0
+offset_bottom = 530.0
 scale = Vector2(0.72, 0.72)
 icon = ExtResource("6_xln5p")
 flat = true

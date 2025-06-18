@@ -34,5 +34,5 @@ func omnidirectionalForce(divisor:int):
 
 func explode():
 	omnidirectionalForce(1)
-	SignalManager.emit_signal("darAusente")
+	#SignalManager.emit_signal("darAusente")
 	get_parent().queue_free()
