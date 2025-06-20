@@ -34,6 +34,7 @@ folder_colors={
 "res://Resources/": "red",
 "res://Scenes/": "blue",
 "res://Scripts/": "gray",
+"res://Shaders/": "yellow",
 "res://Sprites/": "purple"
 }
 

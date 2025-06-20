@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_mouse_entered() -> void:
 	hover = true
 	SignalManager.emit_signal("mandarPuntosARestar", get_parent().get_meta("type"))
-	sprite.modulate = Color(0.7, 0.7, 0.7) 
+	sprite.modulate = Color(0.5, 0.5, 0.5) 
 
 func _on_area_2d_mouse_exited() -> void:
 	hover = false

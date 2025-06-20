@@ -6,14 +6,22 @@ extends Node2D
 @onready var area = $"../Area2D"
 @onready var label = $"../Label"
 
-var rojo = preload("res://Sprites/bolas/rojo.png")
-var naranja = preload("res://Sprites/bolas/naranja.png")
-var amarillo = preload("res://Sprites/bolas/amarillo.png")
+#bronce
+#verde
+#azul
+#violeta
+#cian
+#rojo
+#dorado
+
+
+var bronce = preload("res://Sprites/bolas/bronce.png")
 var verde = preload("res://Sprites/bolas/verde.png")
-var cian = preload("res://Sprites/bolas/cian.png")
 var azul = preload("res://Sprites/bolas/azul.png")
 var violeta = preload("res://Sprites/bolas/violeta.png")
-var rosa = preload("res://Sprites/bolas/rosa.png")
+var cian = preload("res://Sprites/bolas/cian.png")
+var rojo = preload("res://Sprites/bolas/rojo.png")
+var dorado = preload("res://Sprites/bolas/golden.png")
 
 
 var instanciadaDesdeEditor := false
@@ -23,16 +31,15 @@ func _ready() -> void:
 	call_deferred("setSprite", false)
 	#label.text = str(get_parent().get_meta("type"))
 	
-#func _process(delta: float) -> void:
-#	if Input.is_action_just_pressed("ui_accept"):
-#		setSprite(0)
+func _process(delta: float) -> void:
+	sprite.rotation = -get_parent().rotation #este código no sé si será el más eficiente pero funciona
 
 func agrandar(cant:float):
 	
 	var vectorCant = Vector2(1.5*cant, 1.5*cant)
 	
 	#bola.scale = vectorCant
-	sprite.scale = vectorCant/24
+	sprite.scale = vectorCant/9.5
 	collision.scale = vectorCant
 	area.scale = vectorCant
 	explosionRange.scale = vectorCant
@@ -50,31 +57,26 @@ func setSprite(setRandomONo:bool):
 	
 	match type:
 		0:
-			sprite.texture = rojo
-			#sprite.modulate = Color.RED
+			sprite.texture = bronce
 			agrandar(2.5)
 		1:
-			sprite.texture = naranja
-			#sprite.modulate = Color.DARK_ORANGE
+			sprite.texture = verde
 			agrandar(2.25)
 		2:
-			sprite.texture = amarillo
-			#sprite.modulate = Color.YELLOW
+			sprite.texture = azul
 			agrandar(2)
 		3:
-			sprite.texture = verde
-			#sprite.modulate = Color.GREEN
+			sprite.texture = violeta
 			agrandar(1.75)
 		4:
 			sprite.texture = cian
-			#sprite.modulate = Color.BLUE
 			agrandar(1.5)
 		5:
-			sprite.texture = azul
+			sprite.texture = rojo
 			#sprite.modulate = Color.PURPLE
 			agrandar(1.25)
 		6:
-			sprite.texture = violeta
+			sprite.texture = dorado
 			agrandar(1)
 		#7:
 		#	sprite.texture = rosa

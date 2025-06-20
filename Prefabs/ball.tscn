@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn4xb64ckllpp"]
+[gd_scene load_steps=11 format=3 uid="uid://bn4xb64ckllpp"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_64ubr"]
 [ext_resource type="Script" path="res://Scripts/fision.gd" id="2_as3so"]
 [ext_resource type="Texture2D" uid="uid://danmgu7mqjcrk" path="res://Sprites/bolas/rojo.png" id="2_f64rf"]
 [ext_resource type="Script" path="res://Scripts/sprite.gd" id="2_rou5t"]
 [ext_resource type="Script" path="res://Scripts/fusion.gd" id="3_4ef77"]
+[ext_resource type="Script" path="res://Scripts/spriteShader.gd" id="5_j5vnu"]
 [ext_resource type="AudioStream" uid="uid://bnes2socvyvrs" path="res://Audio/ping.wav" id="6_h2xh1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wivf4"]
@@ -25,8 +26,9 @@ script = ExtResource("1_64ubr")
 metadata/type = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.043, 0.043)
+scale = Vector2(0.106, 0.106)
 texture = ExtResource("2_f64rf")
+script = ExtResource("5_j5vnu")
 
 [node name="sprite" type="Node2D" parent="."]
 script = ExtResource("2_rou5t")
