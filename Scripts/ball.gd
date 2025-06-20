@@ -5,6 +5,9 @@ var id : int
 @export var instanciadaDesdeEditor := false
 var quieto = false
 
+var tiempo := 0.0
+var rebotando := false
+
 func _ready() -> void:
 	#SignalManager.emit_signal("darPresente")
 	SignalManager.connect("nivelTerminado", desactivarEscena)
@@ -15,8 +18,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	$Label.text = str(get_meta("type"))
 	
-	#if linear_velocity == Vector2(0,0):
-		#SignalManager.emit_signal("meQuedeQuieto")
+	tiempo += delta
+	if tiempo >= 0.1:
+		tiempo = 0.0
+		if get_contact_count() > 0:
+			if not rebotando:
+				rebotando = true
+				#if not SoundEffectManager.playing:
+				SoundEffectManager.emitirPing()
+		else:
+			rebotando = false
 
 func generarID():
 	id = randf_range(0, 999999999) #por si acaso viste

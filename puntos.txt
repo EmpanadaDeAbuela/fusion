@@ -1,11 +1,13 @@
 NIVEL	+FUSION	-FISION	-SINCAMBIO
-0	+0	-1	-
-1	+1	-1
-2	+2	-2
-3	+3	-3
-4	+4	-5
-5	+5	-8
+0		+0		-13		-40
+1		+1		-8		
+2		+2		-5		
+3		+3		-3		
+4		+5		-2		
+5		+8		-1		
+6		+13		-1
 
 la idea es que clickear en una bola reste puntos, que dos bolas se fusionen sume puntos, 
 ambos dependiendo del nivel de las bolas. Después se me ocurrió que si clickeás pero no ocurre
-ninguna fusión que también te reste puntos.
+ninguna fusión que también te reste puntos. 
+(usás puntos para clickear las pelotas que son los clicks en el código)

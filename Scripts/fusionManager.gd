@@ -6,6 +6,8 @@ var nivelTerminado = false
 
 var pelotas = []
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
+
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
 
@@ -13,7 +15,9 @@ func fusionar(token: int, newPosition:Vector2, type:int):
 	
 	if token in pelotas:
 		instanciarPelotaHija(newPosition, type)
-		sumarClicksDependiendoDeTipo(type)
+		
+		SignalManager.emit_signal("sumarClicks", pointTable.getPointsGained(type))
+		
 		SignalManager.emit_signal("instanciarBola")
 	else:
 		pelotas.append(token)
@@ -26,7 +30,7 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	
 	bolaInstancia.initBola(false)
 	
-	if type < 7:
+	if type < 6:
 		bolaInstancia.set_meta("type", type+1)
 		get_parent().call_deferred("add_child", bolaInstancia) #para que no se loopee
 	else:
@@ -34,6 +38,3 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	SoundEffectManager.emitirPop()
 		
 	#get_parent().call_deferred("add_child", bolaInstancia)
-
-func sumarClicksDependiendoDeTipo(type:int):
-	SignalManager.emit_signal("sumarClicks", 1)#type

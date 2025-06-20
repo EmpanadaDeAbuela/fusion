@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://Audio/soundEffectManager.gd" id="1_3c6k2"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+volume_db = -2.0
 script = ExtResource("1_3c6k2")

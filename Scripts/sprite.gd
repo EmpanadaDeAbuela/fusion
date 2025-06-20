@@ -38,7 +38,7 @@ func agrandar(cant:float):
 	explosionRange.scale = vectorCant
 
 func setRandomMeta():
-	var type = randi() % 8
+	var type = randi() % 7
 	get_parent().set_meta("type", type)
 	
 func setSprite(setRandomONo:bool): 
@@ -76,9 +76,9 @@ func setSprite(setRandomONo:bool):
 		6:
 			sprite.texture = violeta
 			agrandar(1)
-		7:
-			sprite.texture = rosa
-			agrandar(0.75)
+		#7:
+		#	sprite.texture = rosa
+		#	agrandar(0.75)
 
 func setComponents():
 	sprite = $"../Sprite2D"

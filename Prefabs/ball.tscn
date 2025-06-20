@@ -19,6 +19,8 @@ radius = 98.0204
 [node name="ball" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_wivf4")
 continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_64ubr")
 metadata/type = 0
 

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="PointsResource" load_steps=2 format=3 uid="uid://de486g4ik6vmq"]
+
+[ext_resource type="Script" path="res://Resources/pointsResource.gd" id="1_x4x4g"]
+
+[resource]
+script = ExtResource("1_x4x4g")
+pointsGainedPerPair = {
+0: 0,
+1: 1,
+2: 2,
+3: 3,
+4: 5,
+5: 8,
+6: 13
+}
+pointsLostPerClick = {
+0: 13,
+1: 8,
+2: 5,
+3: 3,
+4: 2,
+5: 1,
+6: 1
+}
+pointsLostOnBadPlay = 40

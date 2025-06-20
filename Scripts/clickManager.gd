@@ -1,27 +1,39 @@
 extends Node2D
 
 @onready var labelClicks = $"../clicks"
-@onready var labelPuntos = $"../puntos"
+@onready var labelClicksToLose = $"../clicksToLose"
 
 var clicks = 3
+var clicksARestar = 0
+
 var listaBolas = []
 var sePuedeJugar = false
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
+
 func _ready() -> void:
 	SignalManager.connect("sumarClicks", sumarClicks)
-	#SignalManager.connect("darPresente", ponerPresente)
-	#SignalManager.connect("darAusente", ponerAusente)
-	#SignalManager.connect("meQuedeQuieto", seQuedoQuieto)
 	SignalManager.connect("pedirPuntos", emitirPuntos)
 	SignalManager.connect("jugar", empezar)
-
+	SignalManager.connect("mandarPuntosARestar", previsualizarRestaDePuntos)
+	SignalManager.connect("restarClicks", restarClicks)
+	
 func empezar(sePuede:bool):
 	sePuedeJugar = sePuede
 
-
 func _process(delta: float) -> void:
+	print(clicksARestar)
 	labelClicks.text = str(clicks)
-	#print(listaBolas)
+	
+	if clicksARestar == 0:
+		labelClicksToLose.text = ""
+	else:
+		labelClicksToLose.text = "-" + str(clicksARestar)
+
+func previsualizarRestaDePuntos(puntos:int):
+	clicksARestar = pointTable.getPointsLost(puntos)
+	if puntos == -1:
+		clicksARestar = 0
 
 func emitirPuntos():
 	SignalManager.emit_signal("mandarPuntos", clicks)
@@ -33,20 +45,10 @@ func sumarClicks(cant:int):
 	if sePuedeJugar:
 		clicks += cant
 
-func restarClicks(cant:int):
+func restarClicks(level:int):
 	if sePuedeJugar:
-		clicks -= cant
+		clicksARestar = pointTable.getPointsLost(level)
+		clicks -= clicksARestar
 
 func emitClickAmount():
 	SignalManager.emit_signal("clickAmount", clicks)
-
-func ponerPresente():
-	listaBolas.append(false)
-
-func ponerAusente():
-	pass
-	#listaBolas.erase(listaBolas.back())
-
-func seQuedoQuieto():
-	listaBolas.erase(listaBolas.back())
-	listaBolas.append(true)
