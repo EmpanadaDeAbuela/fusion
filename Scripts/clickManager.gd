@@ -48,7 +48,8 @@ func sumarClicks(cant:int):
 func restarClicks(level:int):
 	if sePuedeJugar:
 		clicksARestar = pointTable.getPointsLost(level)
-		clicks -= clicksARestar
+		if (clicks - clicksARestar) >= 0:
+			clicks -= clicksARestar
 
 func emitClickAmount():
 	SignalManager.emit_signal("clickAmount", clicks)

@@ -5,6 +5,8 @@ var hover:= false
 var clickManager: Node = null
 var sprite :Node = null 
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
+
 func _ready():
 	
 	if clickManager == null:
@@ -29,16 +31,15 @@ func _on_area_2d_mouse_exited() -> void:
 	SignalManager.emit_signal("mandarPuntosARestar", -1)
 	sprite.modulate = Color(1, 1, 1)
 
-func omnidirectionalForce(divisor:int):
+func omnidirectionalForce(fuerza:int):
 	
 	for body in rango.get_overlapping_bodies():
 		if body is RigidBody2D:
 			body.sleeping = false 
 			var dir = (body.global_position - rango.global_position).normalized()
-			var fuerza = 1000.0/divisor
 			body.apply_impulse(dir * fuerza, Vector2.ZERO)
 
 func explode():
-	omnidirectionalForce(1)
+	omnidirectionalForce(pointTable.getImpulseForsePerLevel(get_parent().get_meta("type")))
 	SignalManager.emit_signal("mandarPuntosARestar", -1)
 	get_parent().queue_free()

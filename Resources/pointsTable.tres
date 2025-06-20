@@ -23,3 +23,12 @@ pointsLostPerClick = {
 6: 1
 }
 pointsLostOnBadPlay = 40
+impulseForcePerLevel = {
+0: 1000,
+1: 900,
+2: 800,
+3: 700,
+4: 600,
+5: 500,
+6: 400
+}

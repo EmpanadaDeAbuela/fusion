@@ -10,7 +10,7 @@ func _ready() -> void:
 	SignalManager.connect("jugar", empezar)
 	
 	Engine.time_scale = 5.0
-	for n in 50:
+	for n in 30:
 		await get_tree().create_timer(1.0).timeout
 		instanciarBola()
 	

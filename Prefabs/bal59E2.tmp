@@ -40,11 +40,13 @@ shape = SubResource("CircleShape2D_w7uv5")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(4.65, 4.65)
 shape = SubResource("CircleShape2D_w7uv5")
 
 [node name="explosionRango" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="explosionRango"]
+scale = Vector2(4.5, 4.5)
 shape = SubResource("CircleShape2D_ifred")
 debug_color = Color(0.711187, 0.261943, 1, 0.42)
 
