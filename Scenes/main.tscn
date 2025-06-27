@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=15 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
 [ext_resource type="Script" path="res://Scripts/clickManager.gd" id="2_ckqlq"]
 [ext_resource type="Shader" path="res://Shaders/backgroundShader.gdshader" id="3_edj2a"]
-[ext_resource type="Texture2D" uid="uid://buo33ppgto5bt" path="res://Sprites/white.jpg" id="5_rryh2"]
+[ext_resource type="Texture2D" uid="uid://dldirqjqfic03" path="res://Sprites/glasses/thinGlass.png" id="4_4yfm5"]
+[ext_resource type="Texture2D" uid="uid://v4gksnncjh8e" path="res://Sprites/glasses/circleGlass.png" id="4_o7ev6"]
 [ext_resource type="Texture2D" uid="uid://be0i0xlrwg0jy" path="res://Sprites/btn.png" id="6_xln5p"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="7_ixnxv"]
 [ext_resource type="Texture2D" uid="uid://dd0gjdbaihwof" path="res://Sprites/blackLayer.png" id="7_v2hfy"]
@@ -19,8 +20,11 @@ shader_parameter/scale = 5.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft27m"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1xwf"]
+size = Vector2(354.758, 2.27354)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pegrk"]
-size = Vector2(144.879, 17.9569)
+size = Vector2(118.665, 2.27354)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8st66")
@@ -61,6 +65,16 @@ position = Vector2(0, 28)
 
 [node name="Node" type="Node" parent="."]
 
+[node name="CircleGlass" type="Sprite2D" parent="Node"]
+position = Vector2(-554, 317)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_o7ev6")
+
+[node name="CircleGlass2" type="Sprite2D" parent="Node"]
+position = Vector2(267, 317)
+scale = Vector2(0.28, 0.28)
+texture = ExtResource("4_o7ev6")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="Node"]
 position = Vector2(262, 310)
 rotation = 1.5708
@@ -82,40 +96,45 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_ft27m")
 
 [node name="floor" type="StaticBody2D" parent="Node"]
-position = Vector2(-149, 346)
-scale = Vector2(1.205, -0.0550013)
+position = Vector2(-348, 338)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/floor"]
-texture = ExtResource("5_rryh2")
+texture = ExtResource("4_4yfm5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node/floor"]
+position = Vector2(812, 0)
+texture = ExtResource("4_4yfm5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/floor"]
-position = Vector2(-18.2573, -1.35352)
+position = Vector2(402, 19)
 scale = Vector2(4.9724, 69.4952)
-shape = SubResource("RectangleShape2D_pegrk")
+shape = SubResource("RectangleShape2D_e1xwf")
 
 [node name="leftWall" type="StaticBody2D" parent="Node"]
-position = Vector2(-570, 68)
+position = Vector2(-580, 103)
 rotation = 1.5708
-scale = Vector2(0.805, 0.025)
+scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="Node/leftWall"]
-texture = ExtResource("5_rryh2")
+texture = ExtResource("4_4yfm5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/leftWall"]
 position = Vector2(0, 15.4277)
 scale = Vector2(5.02485, 73.0001)
 shape = SubResource("RectangleShape2D_pegrk")
 
-[node name="rightWall" type="StaticBody2D" parent="Node"]
-position = Vector2(278, 68)
+[node name="leftWall2" type="StaticBody2D" parent="Node"]
+position = Vector2(293, 107)
 rotation = 1.5708
-scale = Vector2(0.805, 0.025)
+scale = Vector2(0.5, 0.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Node/rightWall"]
-texture = ExtResource("5_rryh2")
+[node name="Sprite2D" type="Sprite2D" parent="Node/leftWall2"]
+texture = ExtResource("4_4yfm5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/rightWall"]
-scale = Vector2(5.12422, 73)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/leftWall2"]
+position = Vector2(0, 15.4277)
+scale = Vector2(5.02485, 73.0001)
 shape = SubResource("RectangleShape2D_pegrk")
 
 [node name="ballSpawner" type="Node2D" parent="Node"]
