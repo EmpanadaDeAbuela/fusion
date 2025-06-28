@@ -4,6 +4,9 @@ signal fusionar(id:int, position:Vector2, type:int)
 signal sumarClicks(cant:int)
 signal restarClicks(cant:int)
 
+signal inicioJugada()
+signal ocurrioFusion() #sería lo mismo que fusionar pero la otra tiene argumentos, re hardcodeado
+
 signal instanciarBola()
 
 signal nivelTerminado()

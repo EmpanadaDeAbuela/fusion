@@ -45,7 +45,6 @@ func setRandomMeta():
 	var level = pointTable.getLevel()
 	
 	var stoneChance = (level-1) * 0.05
-	print(stoneChance)
 	#level = 1 => chance = 0/10
 	#level = 2 => chance = 0,5/10
 	#level = 3 => chance = 1/10

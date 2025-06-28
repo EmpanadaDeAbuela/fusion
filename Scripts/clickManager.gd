@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 
 func previsualizarRestaDePuntos(puntos:int):
 	clicksARestar = pointTable.getPointsLost(puntos)
-	if puntos == -1:
-		clicksARestar = 0
+	#if puntos == -1:
+	#	clicksARestar = 0
 
 func emitirPuntos():
 	SignalManager.emit_signal("mandarPuntos", clicks)

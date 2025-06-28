@@ -26,6 +26,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func fusionar(token:int, newPosition:Vector2, type):
 	SignalManager.emit_signal("fusionar", token, newPosition, type)
+	SignalManager.emit_signal("ocurrioFusion")
 
 func generateToken(otherId:int):
 	return otherId * bola.getId()

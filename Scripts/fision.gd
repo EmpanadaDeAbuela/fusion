@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks()-pointTable.getPointsLost(meta) >= 0 and meta != 7:
 		
 		SignalManager.emit_signal("restarClicks", meta)
+		SignalManager.emit_signal("inicioJugada")
 		explode()
 
 func _on_area_2d_mouse_entered() -> void:

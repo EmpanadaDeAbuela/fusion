@@ -10,6 +10,7 @@ var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
+	SignalManager.connect("inicioJugada", inicioJugada)
 
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
@@ -38,3 +39,27 @@ func instanciarPelotaHija(newPosition:Vector2, type:int):
 	SoundEffectManager.emitirPop()
 		
 	#get_parent().call_deferred("add_child", bolaInstancia)
+
+var interrumpido := false
+
+func inicioJugada():
+	
+	interrumpido = false
+	
+	var timer := get_tree().create_timer(5.0)
+	
+	if not SignalManager.is_connected("ocurrioFusion", self._on_fusionar):
+		SignalManager.connect("ocurrioFusion", self._on_fusionar)
+	
+	await timer.timeout
+	
+	if not interrumpido:
+		jugadaInutil()
+
+func _on_fusionar():
+	print("casi sos un bot pero no")
+	interrumpido = true
+
+func jugadaInutil():
+	print("que bot que sos")
+	SignalManager.emit_signal("mandarPuntosARestar", -2)

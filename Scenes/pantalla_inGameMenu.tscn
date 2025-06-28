@@ -49,6 +49,46 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
+[node name="Bronce" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(160, -407)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("2_he5ux")
+
+[node name="Verde" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(159, -295)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("3_hroc2")
+
+[node name="Azul" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(162, -190)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("4_tlsgf")
+
+[node name="Cian" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(730.92, -433.08)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("5_k0k11")
+
+[node name="Rojo" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(731.92, -331.08)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("6_la1xu")
+
+[node name="Violeta" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(161, -80)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("7_k65e3")
+
+[node name="Golden" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(734.92, -219.08)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("8_u4ivs")
+
+[node name="Piedra" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(730.92, -99.08)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("9_ljkpp")
+
 [node name="menuButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Menu"
@@ -56,46 +96,6 @@ text = "Menu"
 [node name="replayButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 text = "Jugar de nuevo"
-
-[node name="Bronce" type="Sprite2D" parent="."]
-position = Vector2(166, 329)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("2_he5ux")
-
-[node name="Verde" type="Sprite2D" parent="."]
-position = Vector2(718, 366)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("3_hroc2")
-
-[node name="Azul" type="Sprite2D" parent="."]
-position = Vector2(1217, 345)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("4_tlsgf")
-
-[node name="Cian" type="Sprite2D" parent="."]
-position = Vector2(429, 512)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("5_k0k11")
-
-[node name="Rojo" type="Sprite2D" parent="."]
-position = Vector2(924, 553)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("6_la1xu")
-
-[node name="Violeta" type="Sprite2D" parent="."]
-position = Vector2(82, 500)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("7_k65e3")
-
-[node name="Golden" type="Sprite2D" parent="."]
-position = Vector2(513, 505)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("8_u4ivs")
-
-[node name="Piedra" type="Sprite2D" parent="."]
-position = Vector2(1336, 492)
-scale = Vector2(0.195, 0.195)
-texture = ExtResource("9_ljkpp")
 
 [connection signal="pressed" from="HBoxContainer/menuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/replayButton" to="." method="_on_replay_button_pressed"]

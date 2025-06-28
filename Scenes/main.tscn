@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=20 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
@@ -11,8 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dd0gjdbaihwof" path="res://Sprites/blackLayer.png" id="7_v2hfy"]
 [ext_resource type="Texture2D" uid="uid://cgk3pspse0alm" path="res://Sprites/glasses/squareGlass.png" id="9_nus0e"]
 [ext_resource type="PackedScene" uid="uid://bpbwoie5phapk" path="res://Scenes/pantalla_final.tscn" id="9_p3nva"]
+[ext_resource type="Script" path="res://Scripts/menu_button.gd" id="10_aw63e"]
 [ext_resource type="PackedScene" uid="uid://cwng4wy1b4jid" path="res://Scenes/pantalla_perder.tscn" id="11_pvddw"]
 [ext_resource type="Script" path="res://Scripts/pantalla_perder.gd" id="12_1sh7k"]
+[ext_resource type="PackedScene" uid="uid://cyqbpb0kbhk2i" path="res://Scenes/pantalla_inGameMenu.tscn" id="14_an8xj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ixnh"]
 shader = ExtResource("3_edj2a")
@@ -196,6 +198,7 @@ scale = Vector2(0.23, 0.23)
 icon = ExtResource("9_nus0e")
 flat = true
 icon_alignment = 1
+script = ExtResource("10_aw63e")
 
 [node name="blackLayer" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -220,6 +223,10 @@ offset_left = -640.0
 offset_top = -1015.0
 offset_right = -640.0
 offset_bottom = -1015.0
+
+[node name="pantallaInGameMenu" parent="." instance=ExtResource("14_an8xj")]
+offset_left = 884.0
+offset_right = 884.0
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="menuButton" to="menuButton" method="_on_pressed"]
