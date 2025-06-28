@@ -13,6 +13,9 @@ class_name PointsResource
 #impulso que genera la destrucción de la bola dependiendo del nivel
 @export var impulseForcePerLevel = {0:1000, 1:900, 2:800, 3:700, 4:600, 5:500, 6:400}
 
+#nivel/ronda, cuanto más alto el nivel más probabilidad de pelotas de piedra
+@export var level = 10
+
 func getPointsGained(pairLevel:int):
 	return pointsGainedPerPair.get(pairLevel, 0)
 
@@ -21,3 +24,9 @@ func getPointsLost(ballLevel:int):
 
 func getImpulseForsePerLevel(ballLevel:int):
 	return impulseForcePerLevel.get(ballLevel, 0)
+
+func getLevel():
+	return level
+
+func nextLevel():
+	level += 1

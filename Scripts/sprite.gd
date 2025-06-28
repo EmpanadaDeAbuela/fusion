@@ -18,6 +18,8 @@ var piedra = preload("res://Sprites/bolas/piedra.png")
 
 var instanciadaDesdeEditor := false
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
+
 func _ready() -> void:
 	call_deferred("setSprite", false)
 	#label.text = str(get_parent().get_meta("type"))
@@ -40,7 +42,7 @@ func setRandomMeta():
 	
 	var type = randi() % 7
 	
-	var level = LevelManager.level
+	var level = pointTable.getLevel()
 	
 	var stoneChance = (level-1) * 0.05
 	print(stoneChance)
