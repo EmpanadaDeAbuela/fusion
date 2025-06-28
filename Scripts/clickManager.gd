@@ -22,7 +22,6 @@ func empezar(sePuede:bool):
 	sePuedeJugar = sePuede
 
 func _process(delta: float) -> void:
-	print(clicksARestar)
 	labelClicks.text = str(clicks)
 	
 	if clicksARestar == 0:
@@ -50,6 +49,11 @@ func restarClicks(level:int):
 		clicksARestar = pointTable.getPointsLost(level)
 		if (clicks - clicksARestar) >= 0:
 			clicks -= clicksARestar
+	if clicks == 0:
+		SignalManager.emit_signal("noHayMasClicks")
+
+func clicksAQuedar(level:int):
+	return clicks - level
 
 func emitClickAmount():
 	SignalManager.emit_signal("clickAmount", clicks)

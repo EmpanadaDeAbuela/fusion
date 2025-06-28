@@ -10,6 +10,7 @@ class_name PointsResource
 # puntos perdidos si tocás algo y no hay ninguna fusión
 @export var pointsLostOnBadPlay = 40
 
+#impulso que genera la destrucción de la bola dependiendo del nivel
 @export var impulseForcePerLevel = {0:1000, 1:900, 2:800, 3:700, 4:600, 5:500, 6:400}
 
 func getPointsGained(pairLevel:int):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cah0rmksvut34"
-path="res://.godot/imported/rosa.png-d1e210e68bcb2b6650feccf323bce49c.ctex"
+uid="uid://c3o08s1b74png"
+path="res://.godot/imported/naranja.png-d89e41de5198d908ee17c3b6659a72ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/bolas/rosa.png"
-dest_files=["res://.godot/imported/rosa.png-d1e210e68bcb2b6650feccf323bce49c.ctex"]
+source_file="res://Sprites/cosasViejas/naranja.png"
+dest_files=["res://.godot/imported/naranja.png-d89e41de5198d908ee17c3b6659a72ea.ctex"]
 
 [params]
 

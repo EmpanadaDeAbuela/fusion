@@ -19,6 +19,7 @@ config/icon="res://Sprites/icon.svg"
 
 SignalManager="*res://Scripts/signalManager.gd"
 SoundEffectManager="*res://Scenes/SoundEffectManager.tscn"
+LevelManager="*res://Scripts/levelManager.gd"
 
 [display]
 

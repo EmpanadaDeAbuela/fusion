@@ -8,9 +8,14 @@ extends Node2D
 
 var fusionPoints = 10
 
+var meta
+
+func _ready() -> void:
+	meta = get_parent().get_meta("type")
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	
-	if body is RigidBody2D and body != bola and body.get_meta("type") == get_parent().get_meta("type"):
+	if body is RigidBody2D and body != bola and body.get_meta("type") == get_parent().get_meta("type") and meta != 7 :
 		
 		#SignalManager.emit_signal("darAusente")
 		body.queue_free()

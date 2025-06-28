@@ -7,29 +7,35 @@ var sprite :Node = null
 
 var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 
+var meta
+
 func _ready():
 	
 	if clickManager == null:
 		clickManager = get_node_or_null("../../../clickManager")
 	if sprite == null:
 		sprite = get_parent().get_node("Sprite2D")
+	
+	meta = get_parent().get_meta("type")
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks() > 0:
+	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks()-pointTable.getPointsLost(meta) >= 0 and meta != 7:
 		
-		SignalManager.emit_signal("restarClicks", get_parent().get_meta("type"))
+		SignalManager.emit_signal("restarClicks", meta)
 		explode()
 
 func _on_area_2d_mouse_entered() -> void:
-	hover = true
-	SignalManager.emit_signal("mandarPuntosARestar", get_parent().get_meta("type"))
-	sprite.modulate = Color(0.5, 0.5, 0.5) 
+	if meta != 7:
+		hover = true
+		SignalManager.emit_signal("mandarPuntosARestar", meta)
+		sprite.modulate = Color(0.5, 0.5, 0.5) 
 
 func _on_area_2d_mouse_exited() -> void:
-	hover = false
-	SignalManager.emit_signal("mandarPuntosARestar", -1)
-	sprite.modulate = Color(1, 1, 1)
+	if meta != 7:
+		hover = false
+		SignalManager.emit_signal("mandarPuntosARestar", -1)
+		sprite.modulate = Color(1, 1, 1)
 
 func omnidirectionalForce(fuerza:int):
 	
@@ -40,6 +46,6 @@ func omnidirectionalForce(fuerza:int):
 			body.apply_impulse(dir * fuerza, Vector2.ZERO)
 
 func explode():
-	omnidirectionalForce(pointTable.getImpulseForsePerLevel(get_parent().get_meta("type")))
+	omnidirectionalForce(pointTable.getImpulseForsePerLevel(meta))
 	SignalManager.emit_signal("mandarPuntosARestar", -1)
 	get_parent().queue_free()

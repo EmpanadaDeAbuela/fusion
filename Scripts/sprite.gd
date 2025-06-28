@@ -14,8 +14,9 @@ var cian = preload("res://Sprites/bolas/cian.png")
 var rojo = preload("res://Sprites/bolas/rojo.png")
 var dorado = preload("res://Sprites/bolas/golden.png")
 
+var piedra = preload("res://Sprites/bolas/piedra.png")
+
 var instanciadaDesdeEditor := false
-#static var sizes = []
 
 func _ready() -> void:
 	call_deferred("setSprite", false)
@@ -36,9 +37,24 @@ func agrandar(cant:float):
 	explosionRange.scale = vectorCant*0.75 #extra?
 
 func setRandomMeta():
-	var type = randi() % 7
-	get_parent().set_meta("type", type)
 	
+	var type = randi() % 7
+	
+	var level = LevelManager.level
+	
+	var stoneChance = (level-1) * 0.05
+	print(stoneChance)
+	#level = 1 => chance = 0/10
+	#level = 2 => chance = 0,5/10
+	#level = 3 => chance = 1/10
+	#...
+	#level = 19 => chance = 9,5/10
+	
+	if randf() < stoneChance:
+		type = 7
+	
+	get_parent().set_meta("type", type)
+
 func setSprite(setRandomONo:bool): 
 	
 	if setRandomONo or instanciadaDesdeEditor: 
@@ -69,6 +85,9 @@ func setSprite(setRandomONo:bool):
 		6:
 			sprite.texture = dorado
 			agrandar(1)
+		7:
+			sprite.texture = piedra
+			agrandar(3)
 			
 func setComponents():
 	sprite = $"../Sprite2D"

@@ -13,3 +13,5 @@ signal pedirPuntos()
 signal mandarPuntos(puntos:int)
 
 signal mandarPuntosARestar(puntos:int)
+
+signal noHayMasClicks()
