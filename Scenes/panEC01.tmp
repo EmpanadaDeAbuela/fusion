@@ -36,6 +36,12 @@ theme_override_font_sizes/font_size = 76
 text = "<puntos>"
 horizontal_alignment = 1
 
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 76
+text = "<algo más de texto>"
+horizontal_alignment = 1
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15

@@ -3,14 +3,16 @@ extends Node2D
 var bola = preload("res://Prefabs/ball.tscn")
 @onready var main = get_parent().get_parent()
 
+var tablaPuntos = preload("res://Resources/pointsTable.tres")
+
 var sePuedeJugar = false
 
 func _ready() -> void:
 	SignalManager.connect("instanciarBola", onInstanciarBola)
 	SignalManager.connect("jugar", empezar)
 	
-	Engine.time_scale = 5.0
-	for n in 30:
+	Engine.time_scale = 3.0
+	for n in tablaPuntos.getBallAmount():
 		await get_tree().create_timer(1.0).timeout
 		instanciarBola()
 	

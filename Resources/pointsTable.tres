@@ -32,3 +32,5 @@ impulseForcePerLevel = {
 5: 500,
 6: 400
 }
+level = 1
+ballAmount = 30

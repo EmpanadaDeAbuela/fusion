@@ -11,6 +11,7 @@ var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 func _ready():
 	SignalManager.connect("fusionar", fusionar)
 	SignalManager.connect("inicioJugada", inicioJugada)
+	$clicks2.text = "round: " + str(pointTable.getLevel())
 
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
