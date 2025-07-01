@@ -38,6 +38,7 @@ script = ExtResource("1_mi7w7")
 
 [node name="background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ys44d")
+layout_mode = 0
 offset_left = -11.9999
 offset_top = -27.0
 offset_right = 28.0001
@@ -66,18 +67,18 @@ text = "Bolazo"
 label_settings = SubResource("LabelSettings_c3mm1")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_top = 477.0
+offset_top = 365.0
 offset_right = 1279.0
-offset_bottom = 602.0
-theme_override_constants/separation = 45
+offset_bottom = 731.0
+theme_override_constants/separation = 15
 alignment = 1
 
 [node name="settingsButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("3_hom6r")
 theme_override_font_sizes/font_size = 91
 theme_override_styles/focus = SubResource("StyleBoxFlat_aon53")
@@ -89,7 +90,7 @@ text = "Settings"
 [node name="howTo" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("3_hom6r")
 theme_override_font_sizes/font_size = 91
 theme_override_styles/focus = SubResource("StyleBoxFlat_aon53")
@@ -101,7 +102,7 @@ text = "how to"
 [node name="playButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("3_hom6r")
 theme_override_font_sizes/font_size = 91
 theme_override_styles/focus = SubResource("StyleBoxFlat_aon53")

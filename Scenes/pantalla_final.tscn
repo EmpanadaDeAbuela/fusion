@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpbwoie5phapk"]
+[gd_scene load_steps=4 format=3 uid="uid://bpbwoie5phapk"]
 
 [ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_dxg50"]
+[ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_gc7mu"]
+[ext_resource type="FontFile" uid="uid://hmb7ytknt5q6" path="res://Fonts/gumela/Gumela.ttf" id="3_tj8q6"]
 
 [node name="pantallaFinal" type="Control"]
 layout_mode = 3
@@ -26,12 +28,14 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gc7mu")
 theme_override_font_sizes/font_size = 76
-text = "Tu puntaje:"
+text = "YOUR SCORE:"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tj8q6")
 theme_override_font_sizes/font_size = 76
 text = "<puntos>"
 horizontal_alignment = 1

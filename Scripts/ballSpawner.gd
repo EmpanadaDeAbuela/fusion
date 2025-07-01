@@ -5,19 +5,25 @@ var bola = preload("res://Prefabs/ball.tscn")
 
 var tablaPuntos = preload("res://Resources/pointsTable.tres")
 
-var sePuedeJugar = false
+var sePuedeJugar = true
 
 func _ready() -> void:
+	SignalManager.connect("nivelTerminado", desactivarNivel)
 	SignalManager.connect("instanciarBola", onInstanciarBola)
 	SignalManager.connect("jugar", empezar)
 	
 	Engine.time_scale = 3.0
 	for n in tablaPuntos.getBallAmount():
-		await get_tree().create_timer(1.0).timeout
-		instanciarBola()
+		#print(tablaPuntos.getBallAmount())
+		if sePuedeJugar:
+			await get_tree().create_timer(1.0).timeout
+			instanciarBola()
 	
 	SignalManager.emit_signal("jugar", true)
 	Engine.time_scale = 1.0
+
+func desactivarNivel():
+	sePuedeJugar = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space") and !main.nivelTerminado:

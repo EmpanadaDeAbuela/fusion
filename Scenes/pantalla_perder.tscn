@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwng4wy1b4jid"]
+[gd_scene load_steps=3 format=3 uid="uid://cwng4wy1b4jid"]
 
 [ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_u3vlg"]
+[ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_407ee"]
 
 [node name="pantallaPerder" type="Control"]
 layout_mode = 3
@@ -26,8 +27,9 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_407ee")
 theme_override_font_sizes/font_size = 76
-text = "Perdiste bot"
+text = "YOU LOSE"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

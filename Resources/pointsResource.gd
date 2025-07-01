@@ -14,10 +14,13 @@ class_name PointsResource
 @export var impulseForcePerLevel = {0:1000, 1:900, 2:800, 3:700, 4:600, 5:500, 6:400}
 
 # {nivel/ronda, cuanto más alto el nivel más probabilidad de pelotas de piedra}
-@export var level = 1
+@export var level:int
 
 # {cantidad de pelotas que aparecen al principio, son los puntos que te quedan al final}
 @export var ballAmount = 14
+
+# {tamaño de la pelota de piedra dependiendo del nivel}
+@export var stoneBallSize = {0:1, 1:1.1, 2:1.2, 3:1.3, 4:1.4, 5:1.5, 6:1.6, 7:1.7, 8:1.8, 9:1.9, 10:2, 11:2.1, 12:2.2, 13:2.3, 14:2.4, 15:2.5, 16:2.6, 17:2.7, 18:2.8, 19:2.9, 20:3}
 
 func getPointsGained(pairLevel:int):
 	return pointsGainedPerPair.get(pairLevel, 0)
@@ -28,6 +31,9 @@ func getPointsLost(ballLevel:int):
 func getImpulseForsePerLevel(ballLevel:int):
 	return impulseForcePerLevel.get(ballLevel, 0)
 
+func getStoneBallSize():
+	return stoneBallSize.get(level, 0)
+	
 func getLevel():
 	return level
 

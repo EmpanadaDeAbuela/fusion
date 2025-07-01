@@ -30,6 +30,7 @@ grow_vertical = 2
 
 [node name="background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_0qe57")
+layout_mode = 0
 offset_left = -11.9999
 offset_top = -27.0
 offset_right = 28.0001
@@ -59,6 +60,7 @@ label_settings = SubResource("LabelSettings_c7rx4")
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_top = 477.0
 offset_right = 1279.0
 offset_bottom = 602.0

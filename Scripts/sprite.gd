@@ -88,7 +88,8 @@ func setSprite(setRandomONo:bool):
 			agrandar(1)
 		7:
 			sprite.texture = piedra
-			agrandar(3/pointTable.getLevel())
+			#var s = 3/pointTable.getLevel() 
+			agrandar(3/pointTable.getStoneBallSize())
 			
 func setComponents():
 	sprite = $"../Sprite2D"

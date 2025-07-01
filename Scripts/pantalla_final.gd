@@ -1,6 +1,6 @@
 extends Control
 
-@onready var labeal = $VBoxContainer/Label2
+#@onready var label2 = $VBoxContainer/Label2
 
 var tablaPuntos = preload("res://Resources/pointsTable.tres")
 var puntosPuente = 0
