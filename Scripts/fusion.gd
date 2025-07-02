@@ -22,7 +22,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		fusionar(generateToken(body.getId()), (global_position+body.global_position)/2, bola.get_meta("type"))
 		fision.omnidirectionalForce(2)
 	#else:
-	#	emitirPing()
+	#	SoundEffectManager.emitirPing()
 
 func fusionar(token:int, newPosition:Vector2, type):
 	SignalManager.emit_signal("fusionar", token, newPosition, type)

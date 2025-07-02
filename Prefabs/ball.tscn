@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bn4xb64ckllpp"]
+[gd_scene load_steps=11 format=3 uid="uid://bn4xb64ckllpp"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_64ubr"]
 [ext_resource type="Script" path="res://Scripts/fision.gd" id="2_as3so"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/fusion.gd" id="3_4ef77"]
 [ext_resource type="Script" path="res://Scripts/spriteShader.gd" id="5_j5vnu"]
 [ext_resource type="AudioStream" uid="uid://bnes2socvyvrs" path="res://Audio/ping.wav" id="6_h2xh1"]
+[ext_resource type="Script" path="res://Scripts/romperPiedra.gd" id="7_ulkut"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w7uv5"]
 radius = 25.1794
@@ -32,6 +33,9 @@ script = ExtResource("2_as3so")
 
 [node name="fusion" type="Node2D" parent="."]
 script = ExtResource("3_4ef77")
+
+[node name="romperPiedra" type="Node2D" parent="."]
+script = ExtResource("7_ulkut")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 scale = Vector2(4.65, 4.65)

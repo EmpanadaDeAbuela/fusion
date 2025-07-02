@@ -42,11 +42,17 @@ func omnidirectionalForce(fuerza:int):
 	
 	for body in rango.get_overlapping_bodies():
 		if body is RigidBody2D:
-			body.sleeping = false 
-			var dir = (body.global_position - rango.global_position).normalized()
-			body.apply_impulse(dir * fuerza, Vector2.ZERO)
+			print(body.get_meta("type"))
+			
+			if body.get_meta("type") != 7:
+				body.sleeping = false 
+				var dir = (body.global_position - rango.global_position).normalized()
+				body.apply_impulse(dir * fuerza, Vector2.ZERO)
+			#else:
+				#body.queue_free()
 
 func explode():
 	omnidirectionalForce(pointTable.getImpulseForsePerLevel(meta))
 	SignalManager.emit_signal("mandarPuntosARestar", -1)
 	get_parent().queue_free()
+	SignalManager.emit_signal("fisionar", get_parent().position)

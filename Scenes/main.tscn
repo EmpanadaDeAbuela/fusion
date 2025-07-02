@@ -253,8 +253,6 @@ offset_left = 27.0
 offset_top = -680.0
 offset_right = 27.0
 offset_bottom = -680.0
-grow_horizontal = 2
-grow_vertical = 2
 script = null
 
 [node name="pantallaFinal" parent="Node2" instance=ExtResource("9_p3nva")]

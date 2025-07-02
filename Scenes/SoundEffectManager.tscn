@@ -5,3 +5,7 @@
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 volume_db = -2.0
 script = ExtResource("1_3c6k2")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true

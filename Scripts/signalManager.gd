@@ -1,5 +1,6 @@
 extends Node
 
+signal fisionar(posicion:Vector2) #para que cada piedra verifique si fue cerca suyo para destruirse
 signal fusionar(id:int, position:Vector2, type:int)
 signal sumarClicks(cant:int)
 signal restarClicks(cant:int)
