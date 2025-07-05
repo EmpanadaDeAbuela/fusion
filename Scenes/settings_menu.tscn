@@ -47,6 +47,7 @@ scale = Vector2(32.423, 18.905)
 mouse_filter = 2
 
 [node name="daltonic" type="Button" parent="."]
+layout_mode = 0
 offset_left = 754.0
 offset_top = 296.0
 offset_right = 1159.0
@@ -62,6 +63,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_vs6tj")
 text = "daltonic mode:"
 
 [node name="Label" type="Label" parent="daltonic"]
+layout_mode = 0
 offset_left = 96.0
 offset_top = 104.0
 offset_right = 288.0

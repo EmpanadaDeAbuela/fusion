@@ -1,3 +1,2 @@
-Cosas para hacer:
-	
-	*satisfacción
+Cómo jugar:
+	dale play
