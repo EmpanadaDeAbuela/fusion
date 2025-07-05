@@ -57,7 +57,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_gd4s5")
 theme_override_font_sizes/font_size = 51
-text = "x"
+text = "."
 
 [node name="clicks2" type="Label" parent="."]
 offset_left = 391.0

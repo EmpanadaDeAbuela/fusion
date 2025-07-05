@@ -5,6 +5,9 @@ var pop = preload("res://Audio/pop.mp3")
 
 @onready var timer = $Timer
 
+var musicValue = 10
+var sfxValue = 10
+
 func emitirPing():
 	#if timer.is_stopped():
 	#	timer.start()

@@ -8,6 +8,7 @@ var quieto = false
 var tiempo := 0.0
 var rebotando := false
 
+
 func _ready() -> void:
 	#SignalManager.emit_signal("darPresente")
 	SignalManager.connect("nivelTerminado", desactivarEscena)

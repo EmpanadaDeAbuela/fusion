@@ -8,7 +8,7 @@ func _ready() -> void:
 	SignalManager.connect("fisionar", romperse)
 
 func romperse(posicionPelota:Vector2):
-	if estaDentroDeArea(posicionPelota):
+	if estaDentroDeArea(posicionPelota) and get_parent().get_meta("type") == 7:
 		get_parent().queue_free()
 
 func estaDentroDeArea(point: Vector2) -> bool:

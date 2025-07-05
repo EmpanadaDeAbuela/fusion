@@ -32,7 +32,7 @@ impulseForcePerLevel = {
 5: 500,
 6: 400
 }
-level = 3
+level = 1
 ballAmount = 14
 stoneBallSize = {
 0: 1,

@@ -6,12 +6,13 @@ extends Node2D
 
 var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 
-var clicks = 14
+var clicks = pointTable.getBallAmount()
 var clicksARestar = 0
 
 var listaBolas = []
 var sePuedeJugar = false
 
+var clickedAtLeastOnce = false
 
 func _ready() -> void:
 	SignalManager.connect("sumarClicks", sumarClicks)
@@ -20,10 +21,17 @@ func _ready() -> void:
 	SignalManager.connect("mandarPuntosARestar", previsualizarRestaDePuntos)
 	SignalManager.connect("restarClicks", restarClicks)
 	
+	if clicks == 0:
+		SignalManager.emit_signal("noHayMasClicks")
+	
 func empezar(sePuede:bool):
 	sePuedeJugar = sePuede
 
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("click"):
+		clickedAtLeastOnce = true
+	
 	labelClicks.text = str(clicks)
 	
 	if clicksARestar == 0:
@@ -43,11 +51,11 @@ func getClicks():
 	return clicks
 
 func sumarClicks(cant:int):
-	if sePuedeJugar:
+	if sePuedeJugar and clickedAtLeastOnce:
 		clicks += cant
 
 func restarClicks(level:int):
-	if sePuedeJugar:
+	if sePuedeJugar and clickedAtLeastOnce:
 		clicksARestar = pointTable.getPointsLost(level)
 		#if (clicks - clicksARestar) >= 0:
 		clicks -= clicksARestar

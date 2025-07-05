@@ -13,6 +13,10 @@ func _ready():
 	SignalManager.connect("inicioJugada", inicioJugada)
 	$clicks2.text = "round: " + str(pointTable.getLevel())
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+
 func fusionar(token: int, newPosition:Vector2, type:int):
 	
 	if token in pelotas:
@@ -62,5 +66,6 @@ func _on_fusionar():
 	interrumpido = true
 
 func jugadaInutil():
-	print("que bot que sos")
-	SignalManager.emit_signal("mandarPuntosARestar", -2)
+	pass
+	#print("que bot que sos")
+	#SignalManager.emit_signal("mandarPuntosARestar", -2)

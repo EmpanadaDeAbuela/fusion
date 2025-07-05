@@ -112,4 +112,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_s6wv8")
 text = "Play"
 
 [connection signal="pressed" from="HBoxContainer/settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/howTo" to="." method="_on_how_to_pressed"]
 [connection signal="pressed" from="HBoxContainer/playButton" to="." method="_on_play_button_pressed"]

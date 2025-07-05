@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://brsym267utpnq"]
+[gd_scene load_steps=11 format=3 uid="uid://brsym267utpnq"]
 
 [ext_resource type="Shader" path="res://Shaders/backgroundShader.gdshader" id="1_abrnx"]
+[ext_resource type="Script" path="res://Scripts/settings_menu.gd" id="1_v3mcr"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_eecyc"]
 [ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="3_svdw3"]
 
@@ -11,13 +12,19 @@ shader_parameter/color2 = Color(0.109804, 0.576471, 0.6, 1)
 shader_parameter/speed = 0.2
 shader_parameter/scale = 5.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_c7rx4"]
+[sub_resource type="LabelSettings" id="LabelSettings_b32sj"]
 font_size = 161
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8e07"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y620n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmq4h"]
 bg_color = Color(0.823529, 0, 0.568627, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2w8x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e6l0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vs6tj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="settingsMenu" type="Control"]
@@ -27,6 +34,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_v3mcr")
 
 [node name="background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_0qe57")
@@ -38,51 +46,62 @@ offset_bottom = 13.0
 scale = Vector2(32.423, 18.905)
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -293.0
-offset_bottom = -121.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 65
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 170.0
+offset_right = 607.0
+offset_bottom = 604.0
+theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_svdw3")
+theme_override_font_sizes/font_size = 36
+text = "music"
+
+[node name="muisc" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_svdw3")
+theme_override_font_sizes/font_size = 36
+text = "SFX"
+
+[node name="sfx" type="HSlider" parent="HBoxContainer"]
+layout_mode = 2
+max_value = 10.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 859.0
+offset_top = 29.0
+offset_right = 1821.0
+offset_bottom = 191.0
+scale = Vector2(0.4, 0.4)
 theme_override_fonts/font = ExtResource("2_eecyc")
-theme_override_font_sizes/font_size = 76
-text = "Setings"
-label_settings = SubResource("LabelSettings_c7rx4")
+theme_override_font_sizes/font_size = 281
+text = "settings"
+label_settings = SubResource("LabelSettings_b32sj")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_top = 477.0
-offset_right = 1279.0
-offset_bottom = 602.0
-theme_override_constants/separation = 250
-alignment = 1
-
-[node name="settingsButton2" type="Button" parent="HBoxContainer"]
-layout_mode = 2
+[node name="back" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 23.0
+offset_right = 205.0
+offset_bottom = 115.0
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
 theme_override_fonts/font = ExtResource("3_svdw3")
-theme_override_font_sizes/font_size = 91
-theme_override_styles/hover = SubResource("StyleBoxFlat_u8e07")
-theme_override_styles/normal = SubResource("StyleBoxFlat_s2w8x")
-text = "Settings"
+theme_override_font_sizes/font_size = 61
+theme_override_styles/focus = SubResource("StyleBoxFlat_y620n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gmq4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2e6l0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vs6tj")
+text = "back"
 
-[node name="settingsButton" type="Button" parent="HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.513726)
-theme_override_fonts/font = ExtResource("3_svdw3")
-theme_override_font_sizes/font_size = 91
-theme_override_styles/hover = SubResource("StyleBoxFlat_u8e07")
-theme_override_styles/normal = SubResource("StyleBoxFlat_s2w8x")
-text = "Settings"
+[connection signal="value_changed" from="HBoxContainer/muisc" to="." method="_on_muisc_value_changed"]
+[connection signal="value_changed" from="HBoxContainer/sfx" to="." method="_on_sfx_value_changed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
