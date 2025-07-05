@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cyqbpb0kbhk2i"]
+[gd_scene load_steps=13 format=3 uid="uid://cyqbpb0kbhk2i"]
 
-[ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_837tg"]
+[ext_resource type="Script" path="res://Scripts/in_game_menu.gd" id="1_7p3vx"]
 [ext_resource type="Texture2D" uid="uid://dv3vrcyq7fgnm" path="res://Sprites/bolas/bronce.png" id="2_he5ux"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_og4c3"]
 [ext_resource type="Texture2D" uid="uid://cud0fmnrli0bv" path="res://Sprites/bolas/verde.png" id="3_hroc2"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://clh8dbpf78fxx" path="res://Sprites/bolas/golden.png" id="8_u4ivs"]
 [ext_resource type="Texture2D" uid="uid://buwkelngvf4vr" path="res://Sprites/bolas/piedra.png" id="9_ljkpp"]
 [ext_resource type="FontFile" uid="uid://hmb7ytknt5q6" path="res://Fonts/gumela/Gumela.ttf" id="11_b8dup"]
+[ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="12_fhfos"]
 
 [node name="pantallaInGameMenu" type="Control"]
 layout_mode = 3
@@ -21,7 +22,7 @@ offset_right = -1280.0
 offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_837tg")
+script = ExtResource("1_7p3vx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -182,3 +183,20 @@ theme_override_font_sizes/font_size = 51
 text = "-1
 +13"
 horizontal_alignment = 1
+
+[node name="back" type="Button" parent="."]
+offset_left = 49.0
+offset_top = 55.0
+offset_right = 2118.0
+offset_bottom = 1050.0
+scale = Vector2(0.07, 0.07)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.588235)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_fonts/font = ExtResource("12_fhfos")
+theme_override_font_sizes/font_size = 986
+text = "back"
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

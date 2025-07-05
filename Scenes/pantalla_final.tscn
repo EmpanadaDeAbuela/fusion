@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpbwoie5phapk"]
+[gd_scene load_steps=9 format=3 uid="uid://bpbwoie5phapk"]
 
 [ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_dxg50"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_gc7mu"]
 [ext_resource type="FontFile" uid="uid://hmb7ytknt5q6" path="res://Fonts/gumela/Gumela.ttf" id="3_tj8q6"]
+[ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="4_85pn4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mja3g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8rb5"]
+bg_color = Color(0.823529, 0, 0.568627, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2pw8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omnlu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="pantallaFinal" type="Control"]
 layout_mode = 3
@@ -49,15 +62,32 @@ offset_top = 559.0
 offset_bottom = -50.47
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 185
 alignment = 1
 
-[node name="menuButton" type="Button" parent="HBoxContainer"]
+[node name="menu" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Menu"
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_fonts/font = ExtResource("4_85pn4")
+theme_override_font_sizes/font_size = 91
+theme_override_styles/focus = SubResource("StyleBoxFlat_mja3g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u8rb5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g2pw8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_omnlu")
+text = "menu"
 
-[node name="replayButton" type="Button" parent="HBoxContainer"]
+[node name="next" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Jugar de nuevo"
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_fonts/font = ExtResource("4_85pn4")
+theme_override_font_sizes/font_size = 91
+theme_override_styles/focus = SubResource("StyleBoxFlat_mja3g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u8rb5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g2pw8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_omnlu")
+text = "next round"
 
-[connection signal="pressed" from="HBoxContainer/menuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/replayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/next" to="." method="_on_next_pressed"]

@@ -1,9 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh1thmbu6d2t5"]
+[gd_scene load_steps=20 format=3 uid="uid://bh1thmbu6d2t5"]
 
 [ext_resource type="Script" path="res://Scripts/how_to_menu.gd" id="1_b07ed"]
 [ext_resource type="Shader" path="res://Shaders/backgroundShader.gdshader" id="1_vbbk4"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_xxwdj"]
 [ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="3_7mr75"]
+[ext_resource type="FontFile" uid="uid://hmb7ytknt5q6" path="res://Fonts/gumela/Gumela.ttf" id="3_hypsy"]
+[ext_resource type="Texture2D" uid="uid://buwkelngvf4vr" path="res://Sprites/bolas/piedra.png" id="6_uw64g"]
+[ext_resource type="Texture2D" uid="uid://dv3vrcyq7fgnm" path="res://Sprites/bolas/bronce.png" id="7_i4hjj"]
+[ext_resource type="Texture2D" uid="uid://cud0fmnrli0bv" path="res://Sprites/bolas/verde.png" id="8_7g3p5"]
+[ext_resource type="Texture2D" uid="uid://biocggbaf2k2" path="res://Sprites/bolas/azul.png" id="9_845df"]
+[ext_resource type="Texture2D" uid="uid://clbywm0ds2wq7" path="res://Sprites/bolas/violeta.png" id="10_wnjna"]
+[ext_resource type="Texture2D" uid="uid://c16sdud45ctqw" path="res://Sprites/bolas/cian.png" id="11_11skt"]
+[ext_resource type="Texture2D" uid="uid://danmgu7mqjcrk" path="res://Sprites/bolas/rojo.png" id="12_3lc3q"]
+[ext_resource type="Texture2D" uid="uid://clh8dbpf78fxx" path="res://Sprites/bolas/golden.png" id="13_xglro"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0qe57"]
 shader = ExtResource("1_vbbk4")
@@ -46,6 +55,20 @@ offset_bottom = 13.0
 scale = Vector2(32.423, 18.905)
 mouse_filter = 2
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 53.0
+offset_top = 120.0
+offset_right = 3839.0
+offset_bottom = 1087.0
+scale = Vector2(0.305, 0.305)
+theme_override_fonts/font = ExtResource("3_hypsy")
+text = "* Click on balls to mix other balls and get points!
+
+* But beware! Each click uses points, dont't waste them
+
+* Reach as far as you can"
+label_settings = SubResource("LabelSettings_c7rx4")
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
 offset_left = 866.0
@@ -60,6 +83,7 @@ label_settings = SubResource("LabelSettings_c7rx4")
 horizontal_alignment = 1
 
 [node name="back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 23.0
 offset_right = 205.0
@@ -73,5 +97,132 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qj1g6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dwc63")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6ryo1")
 text = "back"
+
+[node name="Piedra" type="Sprite2D" parent="."]
+position = Vector2(255, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("6_uw64g")
+
+[node name="Bronce" type="Sprite2D" parent="."]
+position = Vector2(365, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("7_i4hjj")
+
+[node name="Verde" type="Sprite2D" parent="."]
+position = Vector2(475, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("8_7g3p5")
+
+[node name="Azul" type="Sprite2D" parent="."]
+position = Vector2(585, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("9_845df")
+
+[node name="Violeta" type="Sprite2D" parent="."]
+position = Vector2(695, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("10_wnjna")
+
+[node name="Cian" type="Sprite2D" parent="."]
+position = Vector2(805, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("11_11skt")
+
+[node name="Rojo" type="Sprite2D" parent="."]
+position = Vector2(915, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("12_3lc3q")
+
+[node name="Golden" type="Sprite2D" parent="."]
+position = Vector2(1025, 521.92)
+scale = Vector2(0.195, 0.195)
+texture = ExtResource("13_xglro")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_top = 575.92
+offset_right = 1279.0
+offset_bottom = 702.92
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="clicks" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-
+-"
+horizontal_alignment = 1
+
+[node name="clicks2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-13
++0"
+horizontal_alignment = 1
+
+[node name="clicks3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-8
++1"
+horizontal_alignment = 1
+
+[node name="clicks6" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-5
++2"
+horizontal_alignment = 1
+
+[node name="clicks7" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-3
++3"
+horizontal_alignment = 1
+
+[node name="clicks8" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-2
++5"
+horizontal_alignment = 1
+
+[node name="clicks4" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-1
++8"
+horizontal_alignment = 1
+
+[node name="clicks5" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_hypsy")
+theme_override_font_sizes/font_size = 51
+text = "-1
++13"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="back" to="." method="_on_back_pressed"]

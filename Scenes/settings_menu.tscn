@@ -76,6 +76,7 @@ layout_mode = 2
 max_value = 10.0
 
 [node name="Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = 859.0
 offset_top = 29.0
 offset_right = 1821.0
@@ -88,6 +89,7 @@ label_settings = SubResource("LabelSettings_b32sj")
 horizontal_alignment = 1
 
 [node name="back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 15.0
 offset_top = 23.0
 offset_right = 205.0

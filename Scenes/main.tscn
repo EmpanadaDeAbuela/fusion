@@ -13,10 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://su4vrys810hx" path="res://Sprites/Button.png" id="8_vbxth"]
 [ext_resource type="Texture2D" uid="uid://vhruakbe60hl" path="res://Sprites/ButtonHover.png" id="9_alsn1"]
 [ext_resource type="PackedScene" uid="uid://bpbwoie5phapk" path="res://Scenes/pantalla_final.tscn" id="9_p3nva"]
-[ext_resource type="Script" path="res://Scripts/menu_button.gd" id="10_aw63e"]
 [ext_resource type="PackedScene" uid="uid://cwng4wy1b4jid" path="res://Scenes/pantalla_perder.tscn" id="11_pvddw"]
 [ext_resource type="Script" path="res://Scripts/pantalla_perder.gd" id="12_1sh7k"]
 [ext_resource type="PackedScene" uid="uid://cyqbpb0kbhk2i" path="res://Scenes/pantalla_inGameMenu.tscn" id="14_an8xj"]
+[ext_resource type="Script" path="res://Scripts/pantalla_in_game_menu.gd" id="17_sw0cc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_712x6"]
 shader = ExtResource("3_edj2a")
@@ -220,7 +220,6 @@ theme_override_font_sizes/font_size = 986
 text = "?"
 flat = true
 icon_alignment = 1
-script = ExtResource("10_aw63e")
 
 [node name="blackLayer" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -253,7 +252,7 @@ offset_left = 27.0
 offset_top = -680.0
 offset_right = 27.0
 offset_bottom = -680.0
-script = null
+script = ExtResource("17_sw0cc")
 
 [node name="pantallaFinal" parent="Node2" instance=ExtResource("9_p3nva")]
 top_level = true
@@ -268,4 +267,4 @@ offset_right = -640.0
 offset_bottom = -1015.0
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="menuButton" to="menuButton" method="_on_pressed"]
+[connection signal="pressed" from="menuButton" to="." method="_on_menu_button_pressed"]

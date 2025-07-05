@@ -19,3 +19,5 @@ signal mandarPuntos(puntos:int)
 signal mandarPuntosARestar(puntos:int)
 
 signal noHayMasClicks()
+
+signal inGameMenu(aparecer:bool)

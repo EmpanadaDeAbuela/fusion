@@ -1,7 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwng4wy1b4jid"]
+[gd_scene load_steps=8 format=3 uid="uid://cwng4wy1b4jid"]
 
 [ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_u3vlg"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_407ee"]
+[ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="3_j6a2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g16bl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0f6l1"]
+bg_color = Color(0.823529, 0, 0.568627, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8w0r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n21ml"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="pantallaPerder" type="Control"]
 layout_mode = 3
@@ -41,15 +54,32 @@ offset_top = 559.0
 offset_bottom = -50.47
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 185
 alignment = 1
 
-[node name="menuButton" type="Button" parent="HBoxContainer"]
+[node name="menu" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Menu"
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_fonts/font = ExtResource("3_j6a2n")
+theme_override_font_sizes/font_size = 91
+theme_override_styles/focus = SubResource("StyleBoxFlat_g16bl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0f6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8w0r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n21ml")
+text = "menu"
 
-[node name="replayButton" type="Button" parent="HBoxContainer"]
+[node name="reply" type="Button" parent="HBoxContainer"]
 layout_mode = 2
-text = "Jugar de nuevo"
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
+theme_override_fonts/font = ExtResource("3_j6a2n")
+theme_override_font_sizes/font_size = 91
+theme_override_styles/focus = SubResource("StyleBoxFlat_g16bl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0f6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r8w0r")
+theme_override_styles/normal = SubResource("StyleBoxFlat_n21ml")
+text = "retry"
 
-[connection signal="pressed" from="HBoxContainer/menuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/replayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/reply" to="." method="_on_reply_pressed"]

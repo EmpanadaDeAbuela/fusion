@@ -7,4 +7,5 @@ Cosas para hacer:
 	
 	arreglar pantallas
 	
-	TERMINAR HOW TO PLAY
+	sacar barra espaciadora debug
+		

@@ -62,10 +62,14 @@ func inicioJugada():
 		jugadaInutil()
 
 func _on_fusionar():
-	print("casi sos un bot pero no")
+	#print("casi sos un bot pero no")
 	interrumpido = true
 
 func jugadaInutil():
 	pass
 	#print("que bot que sos")
 	#SignalManager.emit_signal("mandarPuntosARestar", -2)
+
+
+func _on_menu_button_pressed() -> void:
+	SignalManager.emit_signal("inGameMenu", true)
