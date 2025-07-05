@@ -21,14 +21,15 @@ func _ready() -> void:
 	SignalManager.connect("mandarPuntosARestar", previsualizarRestaDePuntos)
 	SignalManager.connect("restarClicks", restarClicks)
 	
-	if clicks == 0:
-		SignalManager.emit_signal("noHayMasClicks")
+	
 	
 func empezar(sePuede:bool):
 	sePuedeJugar = sePuede
 
 func _process(delta: float) -> void:
-	
+	if clicks == 0:
+		SignalManager.emit_signal("noHayMasClicks")
+		
 	if Input.is_action_just_pressed("click"):
 		clickedAtLeastOnce = true
 	

@@ -24,7 +24,3 @@ func _on_next_pressed() -> void:
 	tablaPuntos.nextLevel()
 	tablaPuntos.setBallAmount(int(puntosPuente/3))
 	get_tree().reload_current_scene()
-
-
-func _on_reply_pressed() -> void:
-	get_tree().reload_current_scene()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwng4wy1b4jid"]
 
-[ext_resource type="Script" path="res://Scripts/pantalla_final.gd" id="1_u3vlg"]
+[ext_resource type="Script" path="res://Scripts/pantalla_perder.gd" id="1_yoa6v"]
 [ext_resource type="FontFile" uid="uid://bc5s0wm3q2h8r" path="res://Fonts/casino_2/Casino.ttf" id="2_407ee"]
 [ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="3_j6a2n"]
 
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u3vlg")
+script = ExtResource("1_yoa6v")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

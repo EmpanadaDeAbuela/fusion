@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=21 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://vhruakbe60hl" path="res://Sprites/ButtonHover.png" id="9_alsn1"]
 [ext_resource type="PackedScene" uid="uid://bpbwoie5phapk" path="res://Scenes/pantalla_final.tscn" id="9_p3nva"]
 [ext_resource type="PackedScene" uid="uid://cwng4wy1b4jid" path="res://Scenes/pantalla_perder.tscn" id="11_pvddw"]
-[ext_resource type="Script" path="res://Scripts/pantalla_perder.gd" id="12_1sh7k"]
 [ext_resource type="PackedScene" uid="uid://cyqbpb0kbhk2i" path="res://Scenes/pantalla_inGameMenu.tscn" id="14_an8xj"]
 [ext_resource type="Script" path="res://Scripts/pantalla_in_game_menu.gd" id="17_sw0cc"]
 
@@ -240,7 +239,6 @@ offset_left = -640.0
 offset_top = 445.0
 offset_right = -640.0
 offset_bottom = 445.0
-script = ExtResource("12_1sh7k")
 
 [node name="pantallaInGameMenu" parent="Node2" instance=ExtResource("14_an8xj")]
 anchors_preset = 8
