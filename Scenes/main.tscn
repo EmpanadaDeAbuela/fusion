@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dw4rb18qjspg0"]
+[gd_scene load_steps=18 format=3 uid="uid://dw4rb18qjspg0"]
 
 [ext_resource type="Script" path="res://Scripts/fusionManager.gd" id="1_8st66"]
 [ext_resource type="Script" path="res://Scripts/ballSpawner.gd" id="2_6spoq"]
@@ -7,15 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dldirqjqfic03" path="res://Sprites/glasses/thinGlass.png" id="4_4yfm5"]
 [ext_resource type="FontFile" uid="uid://hmb7ytknt5q6" path="res://Fonts/gumela/Gumela.ttf" id="4_gd4s5"]
 [ext_resource type="Texture2D" uid="uid://v4gksnncjh8e" path="res://Sprites/glasses/circleGlass.png" id="4_o7ev6"]
-[ext_resource type="FontFile" uid="uid://bfhmwbnxfndh4" path="res://Fonts/casino_2/CasinoFlat.ttf" id="4_tjqc8"]
 [ext_resource type="Script" path="res://Scripts/button.gd" id="7_ixnxv"]
 [ext_resource type="Texture2D" uid="uid://dd0gjdbaihwof" path="res://Sprites/blackLayer.png" id="7_v2hfy"]
 [ext_resource type="Texture2D" uid="uid://su4vrys810hx" path="res://Sprites/Button.png" id="8_vbxth"]
 [ext_resource type="Texture2D" uid="uid://vhruakbe60hl" path="res://Sprites/ButtonHover.png" id="9_alsn1"]
 [ext_resource type="PackedScene" uid="uid://bpbwoie5phapk" path="res://Scenes/pantalla_final.tscn" id="9_p3nva"]
 [ext_resource type="PackedScene" uid="uid://cwng4wy1b4jid" path="res://Scenes/pantalla_perder.tscn" id="11_pvddw"]
-[ext_resource type="PackedScene" uid="uid://cyqbpb0kbhk2i" path="res://Scenes/pantalla_inGameMenu.tscn" id="14_an8xj"]
-[ext_resource type="Script" path="res://Scripts/pantalla_in_game_menu.gd" id="17_sw0cc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_712x6"]
 shader = ExtResource("3_edj2a")
@@ -205,21 +202,6 @@ texture_pressed = ExtResource("9_alsn1")
 texture_hover = ExtResource("9_alsn1")
 script = ExtResource("7_ixnxv")
 
-[node name="menuButton" type="Button" parent="."]
-offset_left = 555.0
-offset_top = -318.0
-offset_right = 1543.0
-offset_bottom = 677.0
-scale = Vector2(0.07, 0.07)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 0.588235)
-theme_override_colors/font_color = Color(1, 1, 1, 0.588235)
-theme_override_fonts/font = ExtResource("4_tjqc8")
-theme_override_font_sizes/font_size = 986
-text = "?"
-flat = true
-icon_alignment = 1
-
 [node name="blackLayer" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 top_level = true
@@ -240,18 +222,6 @@ offset_top = 445.0
 offset_right = -640.0
 offset_bottom = 445.0
 
-[node name="pantallaInGameMenu" parent="Node2" instance=ExtResource("14_an8xj")]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 27.0
-offset_top = -680.0
-offset_right = 27.0
-offset_bottom = -680.0
-script = ExtResource("17_sw0cc")
-
 [node name="pantallaFinal" parent="Node2" instance=ExtResource("9_p3nva")]
 top_level = true
 anchors_preset = 8
@@ -265,4 +235,3 @@ offset_right = -640.0
 offset_bottom = -1015.0
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="menuButton" to="." method="_on_menu_button_pressed"]

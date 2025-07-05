@@ -185,6 +185,7 @@ text = "-1
 horizontal_alignment = 1
 
 [node name="back" type="Button" parent="."]
+layout_mode = 0
 offset_left = 49.0
 offset_top = 55.0
 offset_right = 2118.0

@@ -27,13 +27,13 @@ func empezar(sePuede:bool):
 	sePuedeJugar = sePuede
 
 func _process(delta: float) -> void:
-	if clicks == 0:
+	if pointTable.getBallAmount() == 0:
 		SignalManager.emit_signal("noHayMasClicks")
 		
-	if Input.is_action_just_pressed("click"):
+	if Input.is_action_just_pressed("click") and !clickedAtLeastOnce:
 		clickedAtLeastOnce = true
 	
-	labelClicks.text = str(clicks)
+	labelClicks.text = str(pointTable.getBallAmount())
 	
 	if clicksARestar == 0:
 		labelClicksToLose.text = ""
@@ -46,25 +46,25 @@ func previsualizarRestaDePuntos(puntos:int):
 	#	clicksARestar = 0
 
 func emitirPuntos():
-	SignalManager.emit_signal("mandarPuntos", clicks)
+	SignalManager.emit_signal("mandarPuntos", pointTable.getBallAmount())
 
 func getClicks():
 	return clicks
 
 func sumarClicks(cant:int):
 	if sePuedeJugar and clickedAtLeastOnce:
-		clicks += cant
+		pointTable.setBallAmount(pointTable.getBallAmount()+cant)
 
 func restarClicks(level:int):
 	if sePuedeJugar and clickedAtLeastOnce:
 		clicksARestar = pointTable.getPointsLost(level)
 		#if (clicks - clicksARestar) >= 0:
-		clicks -= clicksARestar
-	if clicks <= 0:
+		pointTable.setBallAmount(pointTable.getBallAmount()-clicksARestar)
+	if pointTable.getBallAmount() <= 0:
 		SignalManager.emit_signal("noHayMasClicks")
 
 func clicksAQuedar(level:int):
-	return clicks - level
+	return pointTable.getBallAmount() - level
 
 func emitClickAmount():
 	SignalManager.emit_signal("clickAmount", clicks)

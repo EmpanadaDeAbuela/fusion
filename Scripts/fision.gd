@@ -9,10 +9,7 @@ var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 
 var meta
 
-@onready var clickeable = false
-
 func _ready():
-	clickeable = false
 	
 	if clickManager == null:
 		clickManager = get_node_or_null("../../../clickManager")
@@ -20,20 +17,25 @@ func _ready():
 		sprite = get_parent().get_node("Sprite2D")
 	
 	meta = get_parent().get_meta("type")
-	SignalManager.connect("jugar", empezarAJugar)
-
-func empezarAJugar(nombreDeVariableDeclarativa:bool):
-	clickeable = true
 
 func _physics_process(delta: float) -> void:
 	#print(clickeable)
 	#print(clickManager.getClicks())
 	
-	if Input.is_action_just_pressed("click") and hover and clickManager.getClicks()-pointTable.getPointsLost(meta) >= 0 and meta != 7 and clickeable:
+	#print(sobranClicks())
+	
+	if Input.is_action_just_pressed("click"):
+		#print("hover: " + str(hover))
+		#print("clicks: " + str(sobranClicks()))
+		#print("meta: " + str(meta))
 		
-		SignalManager.emit_signal("restarClicks", meta)
-		SignalManager.emit_signal("inicioJugada")
-		explode()
+		if hover and sobranClicks() and meta != 7:
+			SignalManager.emit_signal("restarClicks", meta)
+			SignalManager.emit_signal("inicioJugada")
+			explode()
+
+func sobranClicks():
+	return clickManager.getClicks()-pointTable.getPointsLost(meta) >= 0
 
 func _on_area_2d_mouse_entered() -> void:
 	if meta != 7:

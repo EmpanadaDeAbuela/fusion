@@ -6,10 +6,10 @@ var tablaPuntos:PointsResource = preload("res://Resources/pointsTable.tres")
 var puntosPuente = 0
 
 func _ready() -> void:
-	
 	SignalManager.connect("mandarPuntos", setearPuntaje)
 
 func setearPuntaje(puntos:int):
+	print(puntos)
 	puntosPuente = puntos
 	var label = find_child("Label2", true, false)
 	if label:

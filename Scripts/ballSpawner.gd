@@ -26,8 +26,9 @@ func desactivarNivel():
 	sePuedeJugar = false
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("space") and !main.nivelTerminado:
-		instanciarBola()
+	pass
+	#if Input.is_action_just_pressed("space") and !main.nivelTerminado:
+	#	instanciarBola()
 
 func empezar(sePuede:bool):
 	sePuedeJugar = sePuede

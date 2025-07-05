@@ -1,5 +1,7 @@
 extends Control
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
+
 func _ready() -> void:
 	setValues()
 
@@ -17,3 +19,11 @@ func _on_muisc_value_changed(value: float) -> void:
 func _on_sfx_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(value / 10.0))
 	SoundEffectManager.sfxValue = value
+
+
+func _on_daltonic_pressed() -> void:
+	pointTable.daltonicMode = !pointTable.daltonicMode
+	if pointTable.daltonicMode:
+		$daltonic/Label.text = "on"
+	else:
+		$daltonic/Label.text = "off"

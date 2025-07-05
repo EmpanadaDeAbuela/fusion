@@ -56,6 +56,7 @@ scale = Vector2(32.423, 18.905)
 mouse_filter = 2
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 53.0
 offset_top = 120.0
 offset_right = 3839.0
@@ -64,9 +65,9 @@ scale = Vector2(0.305, 0.305)
 theme_override_fonts/font = ExtResource("3_hypsy")
 text = "* Click on balls to mix other balls and get points!
 
-* But beware! Each click uses points, dont't waste them
+* But beware! Each click uses points, dont't waste them.
 
-* Reach as far as you can"
+* Reach as far as you can."
 label_settings = SubResource("LabelSettings_c7rx4")
 
 [node name="Label" type="Label" parent="."]
@@ -139,6 +140,7 @@ scale = Vector2(0.195, 0.195)
 texture = ExtResource("13_xglro")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_top = 575.92
 offset_right = 1279.0
 offset_bottom = 702.92

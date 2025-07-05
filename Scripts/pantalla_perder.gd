@@ -21,4 +21,5 @@ func _on_menu_pressed() -> void:
 
 func _on_reply_pressed() -> void:
 	tablaPuntos.setBallAmount(14)
+	tablaPuntos.level = 1
 	get_tree().reload_current_scene()

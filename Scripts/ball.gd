@@ -8,6 +8,7 @@ var quieto = false
 var tiempo := 0.0
 var rebotando := false
 
+var pointTable:PointsResource = preload("res://Resources/pointsTable.tres")
 
 func _ready() -> void:
 	#SignalManager.emit_signal("darPresente")
@@ -15,7 +16,8 @@ func _ready() -> void:
 	$sprite.instanciadaDesdeEditor = instanciadaDesdeEditor
 	generarID()
 	#$Label.text = str(get_meta("type"))
-
+	
+	$Label.visible = pointTable.daltonicMode
 func _process(delta: float) -> void:
 	$Label.text = str(get_meta("type"))
 	
